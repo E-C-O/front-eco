@@ -1,6 +1,7 @@
 import { ProductsService } from '../../../service/products.service';
 import { Component, OnInit } from '@angular/core';
-import { Products } from '../../../model/products';
+import { Produto } from 'src/app/model/produto';
+
 
 @Component({
   selector: 'app-products-id',
@@ -8,8 +9,8 @@ import { Products } from '../../../model/products';
   styleUrls: ['./products-id.component.css']
 })
 export class ProductsIdComponent implements OnInit {
-  idProduto: number
-  products: Products = new Products(0,'','','',0,0)
+  idProduto: number;
+  products: Produto = new Produto();
   consulta: boolean;
   constructor(private ProductsService: ProductsService) { }
 
@@ -18,7 +19,7 @@ export class ProductsIdComponent implements OnInit {
   }
   searchClick(){
     this.consulta = true;
-    this.ProductsService.getById(this.idProduto).subscribe((productsOut: Products) =>{
+    this.ProductsService.getById(this.idProduto).subscribe((productsOut: Produto) =>{
       this.products = productsOut;
     })
   }

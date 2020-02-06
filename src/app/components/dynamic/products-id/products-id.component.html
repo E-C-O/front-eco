@@ -8,8 +8,7 @@ Qtd Estoque: {{products.qtdEstoque}} <br />  -->
 
 <div class="container">
 
-    <div class="space"></div>
-    <div class="row">
+    <!-- <div class="row">
         <div class="col-2"></div>
         <div class="col-8">
             <div class="space"></div>
@@ -18,7 +17,7 @@ Qtd Estoque: {{products.qtdEstoque}} <br />  -->
             </div>
         </div>
         <div class="col-2"></div>
-    </div>
+    </div> -->
 
     <div class="space"></div>
 
@@ -40,10 +39,10 @@ Qtd Estoque: {{products.qtdEstoque}} <br />  -->
                 <div class="row row-cols-1 row-cols-md-3">
                     <div class="col mb-4" *ngIf="consulta">
                         <div class="card h-100">
-                            <img src="{{products.linkfoto}}" class="card-img-top" alt="Imagem do produto">
+                            <!-- <img src="{{products.linkfoto}}" class="card-img-top" alt="Imagem do produto"> -->
                             <div class="card-body">
-                                <h5 class="card-title">{{products.titulo}}</h5>
-                                <p class="card-text">{{products.detalhes}}</p>
+                                <h5 class="card-title">{{products.nome}}</h5>
+                                <p class="card-text">{{products.descricao}}</p>
                             </div>
                             <div class="card-footer">
                                 <div class="row">

@@ -1,6 +1,8 @@
 import { Cadastro } from 'src/app/model/cadastro';
 import { CadastroService } from 'src/app/service/cadastro/cadastro.service';
 import { Component, OnInit } from '@angular/core';
+import { Usuario } from 'src/app/model/usuario';
+import { UsuarioService } from 'src/app/service/usuario/usuario.service';
 
 @Component({
   selector: 'app-cadastro',
@@ -12,7 +14,7 @@ export class CadastroComponent implements OnInit {
   ngOnInit() {
   }
 
-  cadastro: Cadastro = new Cadastro(0, '', '', '', '');
+  usuario : Usuario = new Usuario();
 
 
   senhaNaoConferem: boolean = true;
@@ -26,26 +28,26 @@ export class CadastroComponent implements OnInit {
 
 
 
-  constructor(private cadastroService: CadastroService) {
+  constructor(private usuarioService: UsuarioService) {
   }
 
 
 
 
   atualizar() {
-    this.cadastroService.getAll().subscribe((usuarios: Cadastro[]) => {
+    this.usuarioService.getAll().subscribe((usuarios: Usuario[]) => {
       this.usuarios = usuarios;
     }, err => {
       console.log(`Erro cod: ${err.status}`);
     });
 
     this.usuarios.forEach(usuario => {
-      if (usuario.email == this.cadastro.email)
+      if (usuario.email == this.usuario.email)
         this.emailInvalido = true;
-      this.cadastro.idUsuario = usuario.idUsuario;
+      this.usuario.id = usuario.idUsuario;
     });
 
-    this.cadastroService.update(this.cadastro).subscribe((usuarios: Cadastro[]) => {
+    this.usuarioService.update(this.usuario).subscribe((usuarios: Usuario[]) => {
       this.usuarios = usuarios;
     }, err => {
       console.log(`Erro cod: ${err.status}`);
@@ -57,10 +59,12 @@ export class CadastroComponent implements OnInit {
 
 
   cadastrar() {
-    this.cadastroService.insert(this.cadastro).subscribe((cadastro: Cadastro) => {
-      this.cadastro = cadastro;
+    this.usuarioService.insert(this.usuario).subscribe((usuario: Usuario) => {
+      this.usuario = usuario;
+      alert("Usuario cadastrado");
     }, err => {
       console.log(`Erro cod: ${err.status}`);
+      alert("Erro ao cadastrar");
     });
   }
 

@@ -1,7 +1,7 @@
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { Globals } from 'src/app/model/globals';
-import { Cadastro } from 'src/app/model/cadastro';
+import { Usuario } from 'src/app/model/usuario';
 
 @Component({
   selector: 'app-contato',
@@ -13,10 +13,11 @@ export class ContatoComponent implements OnInit {
 
   constructor(private router : Router) { }
   
-  cadastro : Cadastro;
+  cadastro : Usuario;
 
   ngOnInit() {
     if (Globals.CADASTRO == undefined) {
+      alert("Faça login para continuar");
       this.router.navigate(['login']);
     } 
     else {

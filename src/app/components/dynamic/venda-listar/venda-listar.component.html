@@ -1,0 +1,33 @@
+<div class="container col-12">
+    <!-- <div class="img">
+            <img src="../../../../assets/bg.png">
+        </div> -->
+
+    <div class="row col-12"
+        style="padding-top: 130px;padding-left: 130px;padding-right: 30px; font-size: 15px;">
+
+
+        <input name="nomeInput" [(ngModel)]="nomeCategoria" style="height: 20px;;" type="text"
+            placeholder="Busca por nome" (keyup)="buscaNome()">
+
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th scope="col">Produto</th>
+                    <th scope="col">Valor</th>
+                    <th scope="col">Categoria</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of vendas">
+                    <td>{{item.produto.nome}}</td>
+                    <td>{{item.produto.valor}}</td>
+                    <td>{{item.produto.categoria.nome}}</td>
+                </tr>
+            </tbody>
+        </table>
+
+
+    </div>
+
+</div>

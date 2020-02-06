@@ -1,13 +1,23 @@
-<!-- <div class="container">
+<div class="container col-12">
 
   <div class="space"></div>
   <div class="row">
-    <div class="col-2"></div>
+    <div class="col-2">
+        <nav class="nav flex-column">
+            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Produto</a>
+          <a class="nav-link" [routerLink]="['/produto/produtos']" routerLinkActive="router-link-active" >Todos</a>
+          <a class="nav-link" [routerLink]="['/produto/produto']" routerLinkActive="router-link-active" >Busca por id</a>
+          <a class="nav-link" [routerLink]="['/produto/produtoCadastro']" routerLinkActive="router-link-active" >Cadastrar Produto</a>
+          <a class="nav-link" [routerLink]="['/produto/produtoAtualizar']" routerLinkActive="router-link-active" >Alterar Produto</a>
+          <a class="nav-link " [routerLink]="['/categoria']" routerLinkActive="router-link-active"  tabindex="-1" aria-disabled="true">Categorias</a>
+        </nav>
+    </div>
     <div class="col-8">
       <div class="space"></div>
       <div class="text-center">
         <h1>Produtos</h1>
       </div>
+      <router-outlet></router-outlet>
     </div>
     <div class="col-2"></div>
   </div>
@@ -22,92 +32,15 @@
 
   </div>
 
-  <div class="row">
-    <div class="col-2"></div>
+  <div class="row col-12">
+    <div class="col-2">
+     
+    </div>
     <div class="col-8">
       <div class="container">
-        <app-products-list></app-products-list>
+        
       </div>
     </div>
     <div class="col-2"></div>
   </div>
 </div>
- -->
-
-
-<main>
-  <div id="shopify-section-product-template" class="shopify-section">
-    <div class="single-product-area mt-80 mb-80">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-5">
-            <div class="product-details-large" id="ProductPhoto">
-              <img id="ProductPhotoImg" class="product-zoom" data-image-id=""
-                alt="12. Aliexpress dropshipping by oberlo" src="../../../../assets/perfume.jpg">
-
-            </div>
-
-          </div>
-          <div class="col-md-7">
-            <div class="single-product-content">
-              <form method="post" id="AddToCartForm" accept-charset="UTF-8" class="shopify-product-form"
-                enctype="multipart/form-data">
-                <input type="hidden" name="form_type" value="product" /><input type="hidden" name="utf8" value="✓" />
-                <div class="product-details">
-                  <h1 class="single-product-name">ÁGUA DE COLÔNIA SEGURA ESSE XÊRO - MENTA 110ML - LOLA COSMETICS</h1>
-                  <div class="single-product-reviews">
-                    <span class="shopify-product-reviews-badge" data-id="1912078270534"></span>
-                  </div>
-                  <div class="product-sku">Código:<span class="variant-sku"> COL_MENTA</span></div>
-                  <div class="single-product-price">
-                    <div class="product-discount"><span class="price" id="ProductPrice"><span
-                          class=money>R$49,90</span></span></div>
-                  </div>
-                  <div class="product-info">Não sou uma água de colônia qualquer. Sou feita com mais de 95% de
-                    ingredientes de origem vegetal. No mais, sou vegana, feita com consciência, empatia e
-                    responsabilidade e com perfume mara!!!
-                    <b>O que mais você precisa saber:</b> Meu perfume vem da alquimia perfeita dos óleos essenciais de
-                    Menta,
-                    Rosa Turca, Cravo, Notas Herbais, Vetiver e fragrâncias com solventes vegetais.<br><br>
-
-                    <b>Ativos:</b> Menta, Rosa Turca, Cravo, Notas Herbais e Vetiver<br><br>
-
-                    <b>Modo de usar:</b> Borrife pelo corpo sem medo de ser feliz. Evite contato com olhos e mucosas.
-                    <br><br>
-
-                    <b>Não tem: </b>Glúten . Sulfatos . Ftalatos . OGMs . Silicones . Conservantes sintéticos .
-                    Fragrância com
-                    solventes glicóis . Corantes sintéticos . Cloreto de sódio . Parabenos . Óleo mineral . Parafina .
-                    Derivados de animais .<br><br>
-
-                    <b>Ingredientes: </b>Alcohol*, Aqua/Water/Eau, Vetiveria Zizanoides Root Oil*, Mentha Piperita
-                    (Peppermint)
-                    Oil*, Rosa Damascena Flower Oil*, Eugenia Caryophyllus Flower Oil*, Cedrus Atlantica Wood Oil*,
-                    Rosmarinus Officinallis (Rosemary Oleoresin) Extract*, Tocopherol*, Parfum/Fragrance, Citronelol**,
-                    Geraniol**, Cinnamal**, Limonene**, Isoeugenol**, Benzyl Salicylate**, Eugenol**, Citronellol**,
-                    Coumarin**, Hexyl Cinnamal**, Alpha-Isomethyl Ionone**, Hydroxyisohexyl 3-Cyclohexene
-                    Carboxaldehyde**, Benzyl Benzoate**, Linalool**, Citral**, Famesol**.*Fonte Vegetal**Componentes dos
-                    óleos essenciais e fragrância.</div>
-
-                  <div class="single-product-action">
-                    <div class="product-variant-option">
-                      <select name="id" id="productSelect" class="product-single__variants" style="display:none;">
-                        <option selected="selected" data-sku="YQT71020193" value="19506517377094">Default Title - <span
-                            class=money>$20.66
-                            USD</span></option>
-
-                      </select>
-                    </div>
-                    <div class="product-add-to-cart">
-                      <span class="control-label">Quantidade</span>
-                      <div class="cart-plus-minus">
-                        <input class="cart-plus-minus-box" type="text" name="quantity" value="1">
-                      </div>
-                      <div class="add">
-                        <button type="submit" class="add-to-cart ajax-spin-cart" id="AddToCart">
-                          <i class="ion-bag"></i>
-                          <span class="list-cart-title cart-title" id="AddToCartText">Adicionar ao carrinho
-                          </span>
-                        </button>
-                        
-

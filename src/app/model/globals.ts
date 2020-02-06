@@ -1,6 +1,6 @@
-import { Cadastro } from './cadastro';
+import { Usuario } from './usuario';
 export class Globals {
 
-    public static CADASTRO : Cadastro;
+    public static CADASTRO : Usuario;
     public static STATUS : Boolean = false;
 }
