@@ -1,8 +1,7 @@
+import { Products } from './../../../model/products';
 import { Component, OnInit } from '@angular/core';
+import { ProductsService } from 'src/app/service/products.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Produto } from 'src/app/model/produto';
-import { ProdutoService } from 'src/app/service/produto/produto.service';
-import { Categoria } from 'src/app/model/categoria';
 
 @Component({
   selector: 'app-produto-atualizar',
@@ -11,12 +10,10 @@ import { Categoria } from 'src/app/model/categoria';
 })
 export class ProdutoAtualizarComponent implements OnInit {
 
-  produto : Produto = new Produto();
-  categoriaId : number;
-  categoria : Categoria = new Categoria();
+  produto : Products = new Products(0,"","","",0,0);
   idValid : boolean = true;
 
-  constructor(private produtoService: ProdutoService,
+  constructor(private produtoService: ProductsService,
     private route: ActivatedRoute,
     private router: Router) {
   }
@@ -25,8 +22,8 @@ export class ProdutoAtualizarComponent implements OnInit {
   }
 
   idValido(){
-    let produto : Produto = new Produto();
-    this.produtoService.getById(this.produto.id).subscribe((res: Produto) => {
+    let produto : Products = new Products(0,"","","",0,0);
+    this.produtoService.getById(this.produto.idProduto).subscribe((res: Products) => {
       produto = res;
       if(produto == null){
         alert("Id inválido");
@@ -42,10 +39,7 @@ export class ProdutoAtualizarComponent implements OnInit {
   atualizar() {
     // this.idValido();
     // if(!this.idValid){
-      this.categoria.id = this.categoriaId;
-      this.produto.categoria = this.categoria;
-      alert(this.categoriaId);
-      this.produtoService.update(this.produto).subscribe((produto: Produto) => {
+      this.produtoService.update(this.produto).subscribe((produto: Products) => {
         this.produto = produto;
         alert("Atualizado com sucesso!");
         this.router.navigate(['/produtos']);

@@ -1,16 +1,199 @@
+<!--<div class="container col-12">
+    <div class="row">
+        <div class="col-0"></div>
+        <div class="col-5">
+            <div class="margin">
+                <h3 style="text-align:center">Cadastro: </h3>
+                <div class="card">
+                    <div class="card-body">
 
+
+
+
+                        <form style="text-align:center" [formGroup]="angForm" novalidate>
+                            <div class="form-row">
+                                <div class="col-md-12">
+                                    <label for="validationDefault01">Nome Completo</label>
+                                    <input type="text" class="form-control" formControlName="name"
+                                        id="validationDefault01" value=" " required>
+                                </div>
+
+                                <div class="col-6"
+                                    *ngIf="angForm.controls['name'].invalid && (angForm.controls['name'].dirty || angForm.controls['name'].touched)"
+                                    class="alert alert-danger">
+                                    <div *ngIf="angForm.controls['name'].errors.required">
+                                        Nome completo requerido
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+
+
+
+
+                            <div class="form-row">
+                                <div class="col-md-12 mb-3">
+                                    <label for="validationDefault03">Email</label>
+                                    <input formControlName="address" type="email" class="form-control"
+                                        id="validationDefault03" pattern="" required>
+                                </div>
+
+                                <div class="col-6"
+                                    *ngIf="angForm.controls['address'].invalid && (angForm.controls['address'].dirty || angForm.controls['address'].touched)"
+                                    class="alert alert-danger">
+                                    email inválido.
+                                    <div *ngIf="angForm.controls['address'].errors.required">
+                                        email requerido.
+                                    </div>
+                                </div>
+
+
+
+
+
+
+
+                                <div class="col-md-12 mb-3">
+                                    <label for="validationDefault05">Telefone</label>
+                                    <input formControlName="tel" type="text" class="form-control"
+                                        id="validationDefault05" pattern="([11-99]{2})([9]?[0-9]{8})" required>
+                                </div>
+                                <div class="col-6"
+                                    *ngIf="angForm.controls['tel'].invalid && (angForm.controls['tel'].dirty || angForm.controls['tel'].touched)"
+                                    class="alert alert-danger">
+                                    telefone inválido.
+                                    <div *ngIf="angForm.controls['tel'].errors.required">
+                                        telefone requerido.
+                                    </div>
+                                </div>
+
+
+
+
+
+
+                                <div class="col-md-12 mb-3">
+                                    <label for="validationDefault05">Senha</label>
+                                    <input type="password" class="form-control" id="validationDefault05"
+                                        formControlName="senha" pattern="((?=.*[@,#,$,%,&]).{10,64})"
+                                        [(ngModel)]="senha1" required>
+                                </div>
+
+
+
+                                <div class="col-md-12 mb-3">
+                                    <label for="validationDefault05">Confirmar senha</label>
+                                    <input type="password" class="form-control" id="validationDefault05"
+                                        [(ngModel)]="senha2" required>
+                                </div>
+                                <div>
+
+                                </div>
+                                <div class="col-6"
+                                    *ngIf="angForm.controls['senha'].invalid && (angForm.controls['senha'].dirty || angForm.controls['senha'].touched)"
+                                    class="alert alert-danger">
+                                    senha fraca.
+                                    <div *ngIf="angForm.controls['senha'].errors.required">
+                                        senha requerida.
+                                    </div>
+                                </div>
+                                
+                                <div id="senhaNãoConferem" style="visibility: hidden" class="alert alert-danger">
+                                    senhas não conferem.
+                                </div>
+                            </div>
+                            
+                            <button class="btn btn-primary" (click)="compara()" type="input">Enviar</button>
+                        </form>
+
+
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-2"></div>
+    </div>
+</div>-->
+
+
+<!-- <div class="container">
+    <div class="row">
+        <div class="col">
+            <img src="assets/cadastro.jpg" width="500" height="700" class="img" alt="Arvore com uma placa">
+        </div>
+        <div class="col">
+            <div class="margin">
+                <h3 style="text-align:center">Cadastro: </h3>
+                <div class="card">
+                    <div class="card-body">
+
+
+
+                        <form>
+                            <div class="form-group">
+                                <label for="nome">Nome Completo</label>
+                                <input type="text" class="form-control" id="nome" placeholder="Digite seu Nome completo"
+                                    data-toggle="tooltip" data-placement="bottom" title="Email inválido"
+                                    [ngModelOptions]="{standalone: true}" [(ngModel)]="cadastro.nome">
+
+                            </div>
+
+
+
+
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Endereco de Email</label>
+                                <input type="email" class="form-control" name="email" id="exampleInputEmail1"
+                                    placeholder="Digite o seu email" [ngModelOptions]="{standalone: true}"
+                                    [(ngModel)]="cadastro.email">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleInputTel">Telefone</label>
+                                <input type="text" class="form-control" name="telefone" id="exampleInputTel"
+                                    placeholder="Digite seu telefone" [ngModelOptions]="{standalone: true}"
+                                    [(ngModel)]="cadastro.telefone">
+                            </div>
+
+
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Senha</label>
+                                <input type="password" class="form-control" id="exampleInputPassword1"
+                                    placeholder="Digite uma senha com pelo menos 10 digitos e 01 caracter especial.">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Senha</label>
+                                <input type="password" class="form-control" [ngModelOptions]="{standalone: true}"
+                                    [(ngModel)]="cadastro.senha" id="exampleInputPassword1"
+                                    placeholder="Digite uma senha com pelo menos 01 caracter especial e pelo menos 10 digitos.">
+                            </div>
+
+
+                            <button (click)="cadastrar()" class="btn btn-primary">Cadastrar</button>
+                            <button [routerLink]="['/cadastro-listar']" class="btn btn-primary">Listar</button>
+                            <button (click)="atualizar()" class="btn btn-primary">Listar</button>
+                        </form>
+
+
+                    </div>
+                </div> -->
 
 
 <!-- <img class="wave" src="img/wave.png"> -->
-<div class="container" style="padding-left: 150px;">
-    <!-- <div class="img">
+<div class="container">
+    <div class="img">
         <img src="../../../../assets/bg.png">
-    </div> -->
+    </div>
     <div class="login-content">
         <form action="index.html">
 
             <h2 class="title"></h2>
-
+            
 
 
             <div class="input-div">
@@ -19,9 +202,8 @@
                 </div>
                 <div class="div">
                     <!-- <h5>Usuário</h5> -->
-                    <input name="titulo" placeholder="Nome do produto" type="text" class="input"
-                        (keyup)="emailIsInval()" [ngModelOptions]="{standalone: true}" [(ngModel)]="produto.nome"
-                        required>
+                    <input name="titulo" placeholder="Título" type="text" class="input" (keyup)="emailIsInval()"
+                        [ngModelOptions]="{standalone: true}" [(ngModel)]="produto.titulo" required>
                 </div>
                 <div *ngIf="emailInval">
                     <h5 class="alert-danger">Requerido</h5>
@@ -36,7 +218,7 @@
                 <div class="div">
                     <!-- <h5>Usuário</h5> -->
                     <input name="detalhes" placeholder="Detalhes" type="text" class="input" (keyup)="emailIsInval()"
-                        [ngModelOptions]="{standalone: true}" [(ngModel)]="produto.descricao" required>
+                        [ngModelOptions]="{standalone: true}" [(ngModel)]="produto.detalhes" required>
                 </div>
                 <div *ngIf="emailInval">
                     <h5 class="alert-danger">Requerido</h5>
@@ -50,8 +232,8 @@
                 </div>
                 <div class="div">
                     <!-- <h5>Usuário</h5> -->
-                    <input name="detalhes" placeholder="Marca" type="text" class="input" (keyup)="emailIsInval()"
-                        [ngModelOptions]="{standalone: true}" [(ngModel)]="produto.marca" required>
+                    <input name="foto"  placeholder="Link da foto" type="text" class="input" (keyup)="emailIsInval()"
+                        [ngModelOptions]="{standalone: true}" [(ngModel)]="produto.linkfoto" required>
                 </div>
                 <div *ngIf="emailInval">
                     <h5 class="alert-danger">Requerido</h5>
@@ -64,8 +246,8 @@
                 </div>
                 <div class="div">
                     <!-- <h5>Usuário</h5> -->
-                    <input name="preco" placeholder="Preço" type="text" class="input" (keyup)="emailIsInval()"
-                        [ngModelOptions]="{standalone: true}" [(ngModel)]="produto.valor" required>
+                    <input name="preco"  placeholder="Preço" type="text" class="input" (keyup)="emailIsInval()"
+                        [ngModelOptions]="{standalone: true}" [(ngModel)]="produto.preco" required>
                 </div>
                 <div *ngIf="emailInval">
                     <h5 class="alert-danger">Requerido</h5>
@@ -78,25 +260,8 @@
                 </div>
                 <div class="div">
                     <!-- <h5>Usuário</h5> -->
-                    <input name="qtdEstoque" placeholder="Quantidade em estoque" type="text" class="input"
-                        (keyup)="emailIsInval()" [ngModelOptions]="{standalone: true}" [(ngModel)]="produto.qtdEstoque"
-                        required>
-                </div>
-                <div *ngIf="emailInval">
-                    <h5 class="alert-danger">Requerido</h5>
-                </div>
-            </div>
-
-            <div class="input-div">
-                <div class="i">
-                    <!-- <i class="fas fa-user"></i> -->
-                </div>
-                <div class="div">
-                    <!-- <h5>Usuário</h5> -->
-                    <!-- <input name="categoria" placeholder="Id da categoria" type="text" class="input"
-                        (keyup)="emailIsInval()" [ngModelOptions]="{standalone: true}" [(ngModel)]="categoriaId"
-                        required> -->
-                        <p-dropdown class="input"[options]="categorias" name ="dropdownCategoria" [(ngModel)]="categoriaId"></p-dropdown>
+                    <input name="qtdEstoque"  placeholder="Quantidade em estoque" type="text" class="input" (keyup)="emailIsInval()"
+                        [ngModelOptions]="{standalone: true}" [(ngModel)]="produto.qtdEstoque" required>
                 </div>
                 <div *ngIf="emailInval">
                     <h5 class="alert-danger">Requerido</h5>
@@ -105,49 +270,8 @@
 
 
             
-
-
-            <!-- <form [formGroup]="categoriaForm">
-                        <select [(ngModel)]="produto.categoria" formControlName="cat">
-                            <option  *ngFor="let categoria of categorias" [ngValue]="categoria">
-                                {{ categoria.nome}}
-                            </option>
-                        </select>
-                    </form> -->
-
-
-
-
-
-            <!-- ULTIMO TESTE -->
-
-
-            <!-- <form [formGroup]="categoriaForm" (ngSubmit)="cadastrar()">
-                        <select name="" id="">
-                            <option value="" disabled>Categoria</option>
-                            <option *ngFor="let categoria of categorias" [ngValue]="categoria">
-                                {{ categoria.nome}}
-                            </option>
-
-                        </select>
-                    </form> -->
-
-
-            <!-- <select>
-                        <div *ngFor="let categoria of categorias">
-                            <option [(ngModel)]="categoriaId" [value]="categoria.idCategoria">
-                                {{categoria.nome}}
-                            </option>
-                        </div>
-                    </select> -->
-
-
-
-
-
             <!-- <a href="#">Esqueceu a senha?</a> -->
-            
-            <button (click)="cadastrar()" type="submit" class="btn" value="">Cadastrar</button>
+                <button (click)="cadastrar()"  class="btn" value="">Cadastrar</button>
         </form>
     </div>
 </div>

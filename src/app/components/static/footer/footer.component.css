@@ -7,13 +7,15 @@
 a {
     text-decoration: none;
     outline: none;
+    color: #88c6c3;
 }
 
 .footer-main-div {
     width: 100%;
     height: auto;
     margin: auto;
-    background: #588068;
+    background:#588068 ;
+
     padding: 20px 0px;
     
 }
@@ -40,7 +42,7 @@ a {
 }
 
 .footer-social-icons ul li a {
-    color: #588068;
+    color: #88c6c3;
     font-size: 25px;
     display: block;
 }
@@ -74,6 +76,7 @@ a {
     text-transform: uppercase;
 }
 
+
 .footer-bottom {
     width: 100%;
     height: auto;
@@ -87,7 +90,7 @@ a {
     font-family: 'Poppins', sans-serif;
     font-size: 14px;
     text-align: center;
-    color: #588068;
+    color: #88c6c3;
     font-weight: 600;
     letter-spacing: 1px;
 }
@@ -99,4 +102,10 @@ a {
     position: fixed;
     width: 100px;
     height: 100px;
+    
 }
+
+.fa-chevron-circle-up{
+    cursor: pointer;
+}
+

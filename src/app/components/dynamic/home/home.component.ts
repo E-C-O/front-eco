@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Globals } from 'src/app/model/globals';
+import { Cadastro } from 'src/app/model/cadastro';
 import { Router } from '@angular/router';
-import { Usuario } from 'src/app/model/usuario';
 
 @Component({
   selector: 'app-home',
@@ -13,15 +13,15 @@ export class HomeComponent implements OnInit {
 
   constructor(private router: Router) { }
 
-  cadastro: Usuario;
+  cadastro: Cadastro;
   
   ngOnInit() {
-    // if (Globals.CADASTRO == undefined) {
-    //   this.router.navigate(['login']);
-    // } 
-    // else {
-    //   this.cadastro = Globals.CADASTRO;
-    // }
+    if (Globals.CADASTRO == undefined) {
+      // this.router.navigate(['login']);
+    } 
+    else {
+      this.cadastro = Globals.CADASTRO;
+    }
   }
 
 }

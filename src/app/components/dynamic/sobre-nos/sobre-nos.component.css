@@ -1,9 +1,3 @@
-/* .space{
-    margin: 150px;
-}
-.align-center{
-    text-align: center;
-} */
 .img-resize{
     width: 211px;
     height: 211px;
@@ -55,7 +49,7 @@
 	content: "";
 	width: 110px;
 	height: 1px;
-	/* background-color: #588068; */
+
 	left: 18%;
 	-webkit-transform: translate(-50%, -50%) rotate(90deg);
 	        transform: translate(-50%, -50%) rotate(90deg);
@@ -174,9 +168,9 @@
 	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
 }
 hr {
-	color: #588068;
+	color: #88c6c3;
 }
 
 .text2{
-	color: #588068;
+	color: #88c6c3;
 }

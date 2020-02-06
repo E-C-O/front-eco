@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Globals } from 'src/app/model/globals';
 import { Cadastro } from 'src/app/model/cadastro';
-import { Usuario } from 'src/app/model/usuario';
 
 @Component({
   selector: 'app-ajuda',
@@ -14,7 +13,7 @@ export class AjudaComponent implements OnInit {
 
   constructor(private router : Router) { }
 
-  cadastro : Usuario;
+  cadastro : Cadastro;
   
   ngOnInit() {
     if (Globals.CADASTRO == undefined) {

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Login } from 'src/app/model/login';
+import { Cadastro } from 'src/app/model/cadastro';
 
 
 @Injectable({
@@ -10,8 +10,8 @@ export class LoginService {
 
   constructor(private http: HttpClient) { }
 
-  login(login : Login){
-      return this.http.post(`http://localhost:8080/login`, login);
+  login(cadastro : Cadastro){
+      return this.http.post(`http://cloud.professorisidro.com.br:8088/usuario/login`, cadastro);
   }
 
 }

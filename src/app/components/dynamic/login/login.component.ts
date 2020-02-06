@@ -3,8 +3,6 @@ import { Component, OnInit } from '@angular/core';
 import { Cadastro } from 'src/app/model/cadastro';
 import { Router } from '@angular/router';
 import { Globals } from 'src/app/model/globals';
-import { Login } from 'src/app/model/login';
-import { Usuario } from 'src/app/model/usuario';
 
 @Component({
   selector: 'app-login',
@@ -20,9 +18,7 @@ export class LoginComponent implements OnInit {
   emailInval: boolean = false;
   senhaInval: boolean = false;
 
-
-  userLogin: Login = new Login();
-
+  cadastro: Cadastro = new Cadastro(0, "", "", "", "");
   ngOnInit() {
     if(status)
       alert("online");
@@ -51,7 +47,7 @@ export class LoginComponent implements OnInit {
   // }
 
   emailIsInval() {
-    let email = this.userLogin.email;
+    let email = this.cadastro.email;
     this.emailInval = false;
 
     if (email == undefined || email == null || email == "") {
@@ -63,7 +59,7 @@ export class LoginComponent implements OnInit {
     }
   }
   senhaIsInval() {
-    let senha = this.userLogin.senha;
+    let senha = this.cadastro.senha;
 
     this.senhaInval = false;
 
@@ -83,9 +79,9 @@ export class LoginComponent implements OnInit {
     // this.valid();
 
     if (this.emailInval || this.senhaIsInval) {
-      this.loginService.login(this.userLogin).subscribe((usuario: Usuario) => {
+      this.loginService.login(this.cadastro).subscribe((cadastro: Cadastro) => {
         alert("Login realizado com sucesso");
-        Globals.CADASTRO = usuario;
+        Globals.CADASTRO = cadastro;
         Globals.STATUS = true;
         this.router.navigate(['home']);
       }, err => {
