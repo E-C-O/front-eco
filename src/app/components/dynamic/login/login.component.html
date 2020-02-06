@@ -1,0 +1,48 @@
+<div class="fundo">
+<div class=" container col-12">
+    <div class="emptySpace"></div>
+    <div class="row">
+
+        <div class="space col-lg-6">
+            <!-- <img class="wave" src="assets/back.png" class="img-fluid" alt="Responsive image"> -->
+
+        </div>
+        <div class="login-content col-6">
+
+            <form action="index.html">
+
+                <h2 class="title">LOGIN</h2>
+                <div class="input-div one ">
+                    <div class="i">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="div">
+                        <!-- <h5>Usuário</h5> -->
+                        <input name="email" placeholder="Email" type="text" class="input" (keyup)="emailIsInval()"
+                            [ngModelOptions]="{standalone: true}" [(ngModel)]="userLogin.email" required>
+                    </div>
+                    <div *ngIf="emailInval">
+                        <h5 class="alert-danger">Requerido</h5>
+                    </div>
+                </div>
+                <div class="input-div pass">
+                    <div class="i">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <div class="div">
+                        <!-- <h5>Senha</h5> -->
+                        <input placeholder="Senha" type="password" class="input" (keyup)="senhaIsInval()"
+                            [ngModelOptions]="{standalone: true}" [(ngModel)]="userLogin.senha">
+                    </div>
+                    <div *ngIf="senhaInval">
+                        <h5 class="alert-danger">Requerido</h5>
+                    </div>
+                </div>
+                <!-- <a href="#">Esqueceu a senha?</a> -->
+                <button (click)="login()" class="btn" value="">Entrar</button>
+            </form>
+        </div>
+
+    </div>
+</div>
+</div>

@@ -1,0 +1,119 @@
+<div class="container" style="padding-left: 150px;">
+    <!-- <div class="img">
+        <img src="../../../../assets/bg.png">
+    </div> -->
+    <div class="login-content">
+        <form action="index.html">
+
+            <h2 class="title"></h2>
+
+            <div class="input-div">
+                <div class="i">
+                    <!-- <i class="fas fa-user"></i> -->
+                </div>
+                <div class="div">
+                    <!-- <h5>Usuário</h5> -->
+                    <input name="idProduto" placeholder="Id" type="text" class="input"
+                        [ngModelOptions]="{standalone: true}" [(ngModel)]="produto.id" required>
+                </div>
+                <div *ngIf="emailInval">
+                    <h5 class="alert-danger">Requerido</h5>
+                </div>
+            </div>
+
+            <div class="input-div">
+                <div class="i">
+                    <!-- <i class="fas fa-user"></i> -->
+                </div>
+                <div class="div">
+                    <!-- <h5>Usuário</h5> -->
+                    <input name="titulo" placeholder="Nome" type="text" class="input"
+                        [ngModelOptions]="{standalone: true}" [(ngModel)]="produto.nome" required>
+                </div>
+                <div *ngIf="emailInval">
+                    <h5 class="alert-danger">Requerido</h5>
+                </div>
+            </div>
+
+
+            <div class="input-div">
+                <div class="i">
+                    <!-- <i class="fas fa-user"></i> -->
+                </div>
+                <div class="div">
+                    <!-- <h5>Usuário</h5> -->
+                    <input name="detalhes" placeholder="Descrição" type="text" class="input"
+                        [ngModelOptions]="{standalone: true}" [(ngModel)]="produto.descricao" required>
+                </div>
+                <div *ngIf="emailInval">
+                    <h5 class="alert-danger">Requerido</h5>
+                </div>
+            </div>
+            
+            <div class="input-div">
+                    <div class="i">
+                        <!-- <i class="fas fa-user"></i> -->
+                    </div>
+                    <div class="div">
+                        <!-- <h5>Usuário</h5> -->
+                        <input name="detalhes" placeholder="Marca" type="text" class="input"
+                            [ngModelOptions]="{standalone: true}" [(ngModel)]="produto.marca" required>
+                    </div>
+                    <div *ngIf="emailInval">
+                        <h5 class="alert-danger">Requerido</h5>
+                    </div>
+                </div>
+
+
+
+            <div class="input-div">
+                <div class="i">
+                    <!-- <i class="fas fa-user"></i> -->
+                </div>
+                <div class="div">
+                    <!-- <h5>Usuário</h5> -->
+                    <input name="preco" placeholder="Preço" type="text" class="input"
+                        [ngModelOptions]="{standalone: true}" [(ngModel)]="produto.preco" required>
+                </div>
+                <div *ngIf="emailInval">
+                    <h5 class="alert-danger">Requerido</h5>
+                </div>
+            </div>
+
+            <div class="input-div">
+                <div class="i">
+                    <!-- <i class="fas fa-user"></i> -->
+                </div>
+                <div class="div">
+                    <!-- <h5>Usuário</h5> -->
+                    <input name="categoria" placeholder="id da categoria" type="text" class="input" name="categoria"
+                        [(ngModel)]="categoriaId" required>
+                </div>
+                <div *ngIf="emailInval">
+                    <h5 class="alert-danger">Requerido</h5>
+                </div>
+            </div>
+
+
+            <div class="input-div">
+                <div class="i">
+                    <!-- <i class="fas fa-user"></i> -->
+                </div>
+                <div class="div">
+                    <!-- <h5>Usuário</h5> -->
+                    <input name="qtdEstoque" placeholder="Quantidade em estoque" type="text" class="input"
+                        [ngModelOptions]="{standalone: true}" [(ngModel)]="produto.qtdEstoque" required>
+                </div>
+                <div *ngIf="emailInval">
+                    <h5 class="alert-danger">Requerido</h5>
+                </div>
+            </div>
+
+
+
+            <!-- <a href="#">Esqueceu a senha?</a> -->
+            <button (click)="atualizar()" class="btn" value="">Atualizar</button>
+        </form>
+    </div>
+</div>
+<script type="text/javascript" src="js/main.js"></script>

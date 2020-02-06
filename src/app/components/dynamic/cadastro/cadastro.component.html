@@ -1,0 +1,73 @@
+<div id="background">
+    <div class="container fonte alinhamento">
+        <div class="row">
+            <!-- <div class="col"> -->
+            <!-- <img src="assets/compras.jpg" width="500" height="700" class="img" alt=""> -->
+            <!-- </div> -->
+            <div class="col">
+                <div class="margin">
+                    <h3 class="titulo "> Cadastre-se </h3>
+                    <p id="subtitulo"> Crie uma conta rápida e fácil </p>
+                    <hr>
+
+                    <div class="row d-flex justify-content-center">
+                        <div class="card">
+                            <div class="card-body">
+
+
+                                <form>
+                                    <div class="form-group">
+                                        <label for="nome">Nome Completo</label>
+                                        <input type="text" class="form-control" id="nome"
+                                            placeholder="Digite seu Nome completo" data-toggle="tooltip"
+                                            data-placement="bottom" title="Email inválido"
+                                            [ngModelOptions]="{standalone: true}" [(ngModel)]="usuario.nome">
+
+                                    </div>
+
+
+
+
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Endereco de Email</label>
+                                        <input type="email" class="form-control" name="email" id="exampleInputEmail1"
+                                            placeholder="Digite o seu email" [ngModelOptions]="{standalone: true}"
+                                            [(ngModel)]="usuario.email">
+                                    </div>
+
+                                    <!-- <div class="form-group">
+                                <label for="exampleInputTel">Telefone</label>
+                                <input type="text" class="form-control" name="telefone" id="exampleInputTel"
+                                    placeholder="Digite seu telefone" [ngModelOptions]="{standalone: true}"
+                                    [(ngModel)]="usuario.telefone">
+                            </div> -->
+
+
+                                    <div class="form-group">
+                                        <label for="exampleInputPassword1">Senha</label>
+                                        <input type="password" class="form-control" id="exampleInputPassword1"
+                                            placeholder="Digite uma senha com pelo menos 10 digitos e 01 caracter especial.">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputPassword1">Senha</label>
+                                        <input type="password" class="form-control"
+                                            [ngModelOptions]="{standalone: true}" [(ngModel)]="usuario.senha"
+                                            id="exampleInputPassword1"
+                                            placeholder="Digite uma senha com pelo menos 01 caracter especial e pelo menos 10 digitos.">
+                                    </div>
+
+
+                                    <button (click)="cadastrar()" class="btn btn-primary">Cadastrar</button>
+                                    <button [routerLink]="['/cadastro-listar']" class="btn btn-primary">Listar</button>
+                                    <button (click)="atualizar()" class="btn btn-primary">Atualizar</button>
+                                </form>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

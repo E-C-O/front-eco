@@ -1,0 +1,81 @@
+<div class="container">
+
+  <div class="space"></div>
+  <div class="row">
+    <div class="col-8">
+      <div style="padding-bottom: 5px;">
+        <h1 style="text-align: center">Endereços</h1>
+      </div>
+    </div>
+    <div class="col-2"></div>
+  </div>
+
+  <div class="space"></div>
+
+  <div class="row col-12">
+    <div class="col-2"></div>
+    <div class="col-10">
+      <div>
+        <div class="row row-cols-1 row-cols-md-3 overflow: scroll" style="padding-bottom: 50px;">
+          <table border="2">
+            <tr>
+              <td style="text-align: center; padding-right: 60px;"><b>Rua</b></td>
+              <td style="text-align: center; padding-right: 60px;"><b>Número</b></td>
+              <td style="text-align: center; padding-right: 60px;"><b>Bairro</b></td>
+              <td style="text-align: center; padding-right: 60px;"><b>Cidade</b></td>
+              <td style="text-align: center; padding-right: 60px;"><b>UF</b></td>
+              <td style="text-align: center; padding-right: 60px;"><b>CEP</b></td>
+              <td style="text-align: center; padding-right: 60px;"><b></b></td>
+              <td style="text-align: center; padding-right: 60px;"><b></b></td>
+            </tr>
+            <tr *ngFor="let itemEndereco of endereco; index as i">
+              <td style="text-align: center;">{{itemEndereco.rua}}</td>
+              <td style="text-align: center;">{{itemEndereco.numero}}</td>
+              <td style="text-align: center;">{{itemEndereco.bairro}}</td>
+              <td style="text-align: center;">{{itemEndereco.cidade}}</td>
+              <td style="text-align: center;">{{itemEndereco.uf}}</td>
+              <td style="text-align: center;">{{itemEndereco.cep}}</td>
+              <td style="text-align: center; cursor: pointer;" [routerLink]="['/perfil/enderecoAtualizar', itemEndereco.id]">alterar</td>
+              <td style="text-align: center; cursor: pointer;" (click)="remover(itemEndereco.id)">excluir</td>
+            </tr>
+            <tr>
+              <td><Button [routerLink]="['/perfil/enderecoCadastro']" routerLinkActive="router-link-active" >Adicionar</Button></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+  <!-- <table border="1px">
+      
+          <th>Id Produto</th>
+          <th>Titulo</th>
+          <th>Detalhes</th>
+          <th>Link Foto</th>
+          <th>Preço</th>
+          <th>Qtd Estoque</th>
+          
+          <tr *ngFor= "let item of products">
+           <td>{{item.idProduto}}</td>
+           <td>{{item.titulo}}</td>
+           <td>{{item.detalhes}}</td>
+           <td>{{item.linkfoto}}</td>
+           <td>{{item.preco}}</td>
+           <td>{{item.qtdEstoque}}</td>   
+          </tr>
+      </table>
+      <br>
+      <div *ngIf="products != null">
+          <h1>Quantidade de produtos: {{products.length}}</h1>
+      </div>
+      
+       -->

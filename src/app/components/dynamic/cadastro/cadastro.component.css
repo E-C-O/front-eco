@@ -1,0 +1,25 @@
+.fonte{
+    font-family: 'poppins', sans-serif;
+}
+
+.titulo{
+    color: #588068;
+    text-transform: uppercase;
+}
+
+.alinhamento{
+    text-align: center;
+}
+
+hr{
+  
+    background-color: #588068;
+    height: 5px;
+    box-sizing: border-box;
+    
+}
+
+#subtitulo{
+    
+    font-size: small;
+}

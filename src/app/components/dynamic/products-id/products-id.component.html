@@ -1,0 +1,64 @@
+<!-- <h1>Products</h1>
+Id Produto: {{products.idProduto}} <br />
+Título: {{products.titulo}} <br />
+Detalhes: {{products.detalhes}} <br />
+Link Foto: {{products.linkfoto}} <br />
+Preço: {{products.preco}} <br />
+Qtd Estoque: {{products.qtdEstoque}} <br />  -->
+
+<div class="container">
+
+    <!-- <div class="row">
+        <div class="col-2"></div>
+        <div class="col-8">
+            <div class="space"></div>
+            <div class="text-center">
+                <h1>Produtos</h1>
+            </div>
+        </div>
+        <div class="col-2"></div>
+    </div> -->
+
+    <div class="space"></div>
+
+    <div class="row">
+        <div class="col-2"></div>
+        <div class="col-8">
+            <input type="number" placeholder="Digite um número" [(ngModel)]="idProduto">
+            <input type="button" (click)="searchClick()" value="Enviar"><br /><br />
+        </div>
+        <div class="col-2"></div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-2"></div>
+        <div class="col-8">
+
+            <div>
+                <div class="row row-cols-1 row-cols-md-3">
+                    <div class="col mb-4" *ngIf="consulta">
+                        <div class="card h-100">
+                            <!-- <img src="{{products.linkfoto}}" class="card-img-top" alt="Imagem do produto"> -->
+                            <div class="card-body">
+                                <h5 class="card-title">{{products.nome}}</h5>
+                                <p class="card-text">{{products.descricao}}</p>
+                            </div>
+                            <div class="card-footer">
+                                <div class="row">
+                                    <div class="col-6 ">
+                                        <p class="card-text">R${{products.preco}},00</p>
+                                    </div>
+                                    <div class="col-6">
+                                        <p class="card-text">Uni.: {{products.qtdEstoque}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-2"></div>
+        </div>
+    </div>

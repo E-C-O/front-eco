@@ -1,0 +1,133 @@
+.font{
+	font-family: 'poppins', sans-serif;
+}
+.background{
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+	background-size: cover;
+    /* background-image: url("../../../../assets/bg_3.png"); */
+}
+
+.aboutus-section {
+    padding: 55px;
+}
+.aboutus-title {
+    font-size: 30px;
+    letter-spacing: 0;
+    line-height: 32px;
+    margin: 0 0 39px;
+    padding: 0 0 11px;
+    position: center;
+    text-transform: uppercase;
+    color: #588068;
+}
+ .aboutus-title::after {
+    background:  none repeat scroll 0 0;
+    bottom: 0;
+    content: "";
+    height: 2px;
+    left: 0;
+    position: absolute;
+    width: 54px;
+} 
+.aboutus-text {
+    color: #000;
+    font-size: 13px;
+    line-height: 22px;
+    margin: 0 0 35px;
+    text-align: justify;
+}
+
+a:hover, a:active {
+    color: #e5b0a4;
+    text-decoration: none;
+    outline: 0;
+}
+.aboutus-more {
+    border: 1px solid #1f3b2c;
+    border-radius: 25px;
+    color: #588068;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0;
+    padding: 7px 20px;
+    text-transform: uppercase;
+}
+.feature .feature-box .iconset {
+    background:  none repeat scroll 0 0;
+    float: left;
+    position: relative;
+    width: 18%;
+}
+.feature .feature-box .iconset::after {
+    background: none repeat scroll 0 0;
+    content: "";
+    height: 150%;
+    left: 43%;
+    position: absolute;
+    top: 100%;
+    width: 1px;
+}
+
+.feature .feature-box .feature-content {
+    color: #0f0f0f;
+    font-size: 18px;
+    letter-spacing: 0;
+    line-height: 22px;
+    margin: 0 0 5px;
+    text-align: justify;
+}
+
+
+.feature .feature-box .feature-content {
+    float: left;
+    /* padding-left: 28px; */
+    width: 100%;
+    text-align: justify;
+}
+.feature .feature-box .feature-content {
+    color: #0f0f0f;
+    font-size: 18px;
+    letter-spacing: 0;
+    line-height: 22px;
+    margin: 0 0 5px;
+    text-align: justify;
+}
+.feature .feature-box .feature-content p {
+    color: #000;
+    font-size: 13px;
+    line-height: 22px;
+}
+.icon {
+    color : #fff;
+    padding:0 px;
+    font-size:40px;
+    border: 1px solid #fff;
+    border-radius: 100px;
+    color: #fff;
+    font-size: 28px;
+    height: 70px;
+    line-height: 130px;
+    text-align: center;
+    width: 70px;
+}
+#imgf {
+    width: 75%;
+    height: 75%;
+}
+
+h4{
+    color: #588068;
+}
+
+/* .parallax {
+  
+    background-image: url("../../../../assets/button_up.png");
+    height: 50px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; 
+} */

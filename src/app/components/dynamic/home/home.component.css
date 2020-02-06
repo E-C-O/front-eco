@@ -1,0 +1,145 @@
+.fundofrete{
+    background-color: black;
+    width: 100%;
+    height: 80px;
+}
+.fonte{
+    font-family: 'poppins', sans-serif;
+}
+
+hr{
+    background-color: #588068;
+    height: 5px;
+    box-sizing: border-box;
+}
+
+.titulo{
+    text-transform: uppercase;
+    text-align: center;
+}
+
+/* .container{
+    width: 100%;
+    margin-top: 10%;
+    font-family: sans-serif;
+    letter-spacing: 1px;
+}
+
+.container h2{
+    background: #588068;
+    color: #fff;
+    width: 200px;
+    font-size: 18px;
+    padding: 5px;
+    height: 40px;
+}
+.container h2::after{
+    content: '';
+    border-top: 40px solid #588068;
+    border-right: 40px solid transparent;
+    position: relative;
+    left: 48px;
+    top: 35px;
+}
+.row{
+    margin-top: 30px;
+}
+img{
+    width: 100%;
+}
+.produto-bottom .fa {
+    color: #1f3b2c;
+    font-size: 10px;
+}
+.produto-bottom h3{
+    font-size: 20px;
+    font-weight: bold;
+}
+.produto-bottom h5{
+    font-size: 15px;
+    padding-bottom: 10px;
+}
+.overlay{
+    display: block;
+    opacity: 0;
+    position: absolute;
+    top: 10%;
+    margin-left: 0;
+    width: 70px;
+}
+.produto-top:hover .overlay{
+    opacity: 1;
+    margin-left: 5%;
+    transition: 0.5s;
+}
+.overlay .fa{
+
+    cursor: pointer;
+    background-color: #f5f3f5;
+    color: #000;
+    height: 35px;
+    width: 35px;
+    font-size: 20px;
+    padding: 7px;
+    margin: 5%;
+    margin-bottom: 5%;
+}
+.overlay .btn-secondary{
+    background: transparent !important;
+    border:none !important;
+    box-shadow: none !important;
+} */
+
+*{
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+}
+body{
+    background: #e5b0a4;
+}
+.container{
+    text-align: center;
+    position: relative;
+    display: block;
+ 
+    /* transform: transform(-50% -50%); */
+    width: 2000px;   
+     background: black;
+
+}
+.container h1{
+    text-transform: uppercase;
+    display: block ;
+    background: black;
+    float: inline;
+
+}
+.text1{
+    color: white;
+    font-size: 60px;
+    font-weight: 700;
+    letter-spacing: 8px;
+    margin-bottom: 20px;
+    background: black;
+    /* position: ; */
+    animation: text 3s 1
+}
+/* .text2{
+    font-size: 30px;
+    color: red;
+}
+@keyframes text{
+0%{
+    color:black;
+    margin-bottom: -40px;
+}
+30%{
+    letter-spacing: 25px;
+    margin-bottom: -40%;
+   
+}
+85%{
+    letter-spacing: 8px;
+    margin-bottom: -40px;
+}} */

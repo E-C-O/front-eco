@@ -1,0 +1,90 @@
+<div class="container">
+
+  <!-- <div class="space"></div>
+  <div class="row">
+    <div class="col-2"></div>
+    <div class="col-8">
+      <div class="space"></div>
+      <div class="text-center">
+        <h1>Produtos</h1>
+      </div>
+    </div>
+    <div class="col-2"></div>
+  </div> -->
+
+  <div class="row">
+    <div class="col-2"></div>
+    <div class="col-8">
+      <div class="col-2"></div>
+    </div>
+
+  </div>
+
+  <div class="row">
+    <div class="col-2"></div>
+    <div class="col-8">
+
+      <div>
+        <div class="row row-cols-1 row-cols-md-3">
+          <div class="col mb-4" *ngFor="let itemProduct of products">
+            <div class="card h-100">
+              <!-- <img src="{{itemProduct.linkfoto}}" class="card-img-top" alt="Imagem do produto"> -->
+              <div style="height: 150px">
+                <div class="card-body">
+                  <h5 class="card-title">{{itemProduct.nome}}</h5>
+                  <p class="card-text">{{itemProduct.categoria.nome}}</p>
+                  <p class="card-text">{{itemProduct.descricao}}</p>
+                </div>
+              </div>
+              <button (click)="comprar(itemProduct.id)">Comprar</button>
+              <div class="card-footer">
+                <div class="row">
+                  <div class="col-6 ">
+                    <p class="card-text">R${{itemProduct.valor}},00</p>
+                  </div>
+                  <div class="col-6">
+                    <p class="card-text">Uni.: {{itemProduct.qtdEstoque}}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-2"></div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+  <!-- <table border="1px">
+
+    <th>Id Produto</th>
+    <th>Titulo</th>
+    <th>Detalhes</th>
+    <th>Link Foto</th>
+    <th>Preço</th>
+    <th>Qtd Estoque</th>
+    
+    <tr *ngFor= "let item of products">
+     <td>{{item.idProduto}}</td>
+     <td>{{item.titulo}}</td>
+     <td>{{item.detalhes}}</td>
+     <td>{{item.linkfoto}}</td>
+     <td>{{item.preco}}</td>
+     <td>{{item.qtdEstoque}}</td>   
+    </tr>
+</table>
+<br>
+<div *ngIf="products != null">
+    <h1>Quantidade de produtos: {{products.length}}</h1>
+</div>
+
+ -->

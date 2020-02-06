@@ -1,0 +1,113 @@
+<div class="container">
+    
+    <div class="login-content">
+        <form action="index.html">
+
+            <!--<h2 class="title">Atualização de Endereço</h2>-->
+            <!-- <div class="input-div">
+                <div class="i">
+                    <!--  <i class="fas fa-user"></i>-->
+                <!-- </div>
+                <div class="div">
+                    <!-- <h5>Usuário</h5> -->
+                    <!-- <input name="usuario" placeholder="Id do usuario" type="text" class="input" [ngModelOptions]="{standalone: true}"
+                        [(ngModel)]="usuarioId" required>
+                </div>
+                <div *ngIf="ruaInval">
+                    <h5 class="alert-danger">Requerido</h5>
+                </div>
+            </div>   -->
+
+
+            <div class="input-div">
+                <div class="i">
+                    <!-- <i class="fas fa-user"></i> -->
+                </div>
+                <div class="div">
+                    <!-- <h5>Usuário</h5> -->
+                    <input name="rua" placeholder="Rua" type="text" class="input" [ngModelOptions]="{standalone: true}"
+                        [(ngModel)]="endereco.rua" required>
+                </div>
+                <div *ngIf="ruaInval">
+                    <h5 class="alert-danger">Requerido</h5>
+                </div>
+            </div>
+
+
+            <div class="input-div">
+                <div class="i">
+                    <!-- <i class="fas fa-user"></i> -->
+                </div>
+                <div class="div">
+                    <!-- <h5>Usuário</h5> -->
+                    <input name="numero" placeholder="Número" type="text" class="input"
+                        [ngModelOptions]="{standalone: true}" [(ngModel)]="endereco.numero" required>
+                </div>
+                <div *ngIf="numeroInval">
+                    <h5 class="alert-danger">Requerido</h5>
+                </div>
+            </div>
+
+
+            <div class="input-div">
+                <div class="i">
+                    <!-- <i class="fas fa-user"></i> -->
+                </div>
+                <div class="div">
+                    <!-- <h5>Usuário</h5> -->
+                    <input name="bairro" placeholder="Bairro" type="text" class="input"
+                        [ngModelOptions]="{standalone: true}" [(ngModel)]="endereco.bairro" required>
+                </div>
+                <div *ngIf="bairroInval">
+                    <h5 class="alert-danger">Requerido</h5>
+                </div>
+            </div>
+
+            <div class="input-div">
+                <div class="i">
+                    <!-- <i class="fas fa-user"></i> -->
+                </div>
+                <div class="div">
+                    <!-- <h5>Usuário</h5> -->
+                    <input name="cidade" placeholder="Cidade" type="text" class="input"
+                        [ngModelOptions]="{standalone: true}" [(ngModel)]="endereco.cidade" required>
+                </div>
+                <div *ngIf="cidadeInval">
+                    <h5 class="alert-danger">Requerido</h5>
+                </div>
+            </div>
+
+            <div class="input-div">
+                <div class="i">
+                    <!-- <i class="fas fa-user"></i> -->
+                </div>
+                <div class="div">
+                    <!-- <h5>Usuário</h5> -->
+                    <input name="uf" placeholder="UF" type="text" class="input" [ngModelOptions]="{standalone: true}"
+                        [(ngModel)]="endereco.uf" required>
+                </div>
+                <div *ngIf="ufInval">
+                    <h5 class="alert-danger">Requerido</h5>
+                </div>
+            </div>
+
+            <div class="input-div">
+                <div class="i">
+                    <!-- <i class="fas fa-user"></i> -->
+                </div>
+                <div class="div">
+                    <!-- <h5>Usuário</h5> -->
+                    <input name="cep" placeholder="CEP" type="text" class="input" [ngModelOptions]="{standalone: true}"
+                        [(ngModel)]="endereco.cep" required>
+                </div>
+                <div *ngIf="cepInval">
+                    <h5 class="alert-danger">Requerido</h5>
+                </div>
+            </div>
+
+            <!-- <a href="#">Esqueceu a senha?</a> -->
+            <button (click)="cadastrar()" class="btn" value="">Cadastrar</button>
+        </form>
+    </div>
+</div>
+<script type="text/javascript" src="js/main.js"></script>

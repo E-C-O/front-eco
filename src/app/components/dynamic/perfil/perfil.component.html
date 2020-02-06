@@ -1,0 +1,35 @@
+<div class="container" style="padding-bottom: 30px;">
+    <div style="padding-top:25px;" class="text-center">
+        <h1>Perfil</h1>
+    </div>
+    <div class="row col-12" style="padding-top: 50px">
+        <div class="col-3" >
+            <div>
+                <p-card style="text-align: left; "subheader="Informações"
+                    [style]="{width: '300px'}" styleClass="ui-card-shadow">
+                    <p-header>
+                        <h3 style="padding-left: 10px"class="font">{{user.nome}}</h3>
+                    </p-header>
+                    <div >
+                        <p>Email:  {{user.email}}</p>
+                        <p>Lorem ipsum dolor</p>
+                        <p> sit amet, consectetur</p>
+                    </div>
+                    <p-footer>
+                        <button pButton type="button" [routerLink]="['/cadastroAtualizar']"
+                            routerLinkActive="router-link-active" icon="pi pi-check"
+                            style="margin-right: .25em">Atualizar
+                            perfil</button>
+                        <button pButton type="button" [routerLink]="['/perfil/enderecos']" icon="pi pi-times"
+                            class="ui-button-secondary">Endereços</button>
+                        <button pButton type="button" [routerLink]="['/perfil/compras']" icon="pi pi-times"
+                            class="ui-button-secondary">Minhas compras</button>
+                    </p-footer>
+                </p-card>
+            </div>
+        </div>
+        <div class="col-9">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>

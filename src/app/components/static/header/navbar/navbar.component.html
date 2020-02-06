@@ -1,0 +1,70 @@
+ 
+
+<nav class="navbar sticky-top navbar-expand-lg nav-color">
+  <a class="navbar-brand font-color" [routerLink]="['/home']" href="logo"><img src="assets/logo_rosa.png" id="logo"
+      width="60" height="60" class="img" alt="Logo ECO"></a>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado"
+    aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link font-color borda" [routerLink]="['/home']">Home <span class="sr-only">(current)</span></a>
+      </li>
+
+      <li class="nav-item active">
+        <a class="nav-link font-color borda" [routerLink]="['/produto']">Produto <span class="sr-only">(current)</span></a>
+      </li>
+     
+      <!-- <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle font-color" [routerLink] id="navbarDropdown" role="button"
+          data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Produtos
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" [routerLink]="['/produtos']">Todos</a>
+          <a class="dropdown-item" [routerLink]="['/produtoId']">Buscar</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" [routerLink]="['/produtoCadastro']">Cadastro</a>
+          <a class="dropdown-item" [routerLink]="['/produtoAtualizar']">Atualizar</a>
+        </div>
+      </li> -->
+   
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle font-color" [routerLink] id="navbarDropdown" role="button"
+          data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Quem somos
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" [routerLink]="['/sobrenos']">A Equipe</a>
+          <a class="dropdown-item" [routerLink]="['/empresa']">A Empresa</a>
+        </div>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link font-color" [routerLink]="'/contato'">Contato</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link font-color" [routerLink]="'/cadastro'">Cadastro</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link font-color" [routerLink]="'/perfil'">Perfil</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link font-color" [routerLink]="'/ajuda'">Ajuda</a>
+      </li>
+
+      <li class="nav-item">
+          <a class="nav-link font-color" [routerLink]="'/associados'">Seja um(a) associado(a)</a>
+        </li>
+
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2 click-color" type="search" placeholder="Busca" aria-label="Search">
+      <input type="submit" [routerLink]="'/login'" class="btn" value="Entrar">
+    </form>
+  </div>
+</nav>

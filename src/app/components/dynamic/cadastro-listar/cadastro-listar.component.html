@@ -1,0 +1,14 @@
+<table>
+    <tr>
+        <th>Nome</th>
+        <th>telefone</th>
+        <th>email</th>
+    </tr>
+    <tr *ngFor="let usuario of usuarios">
+        <td>{{usuario.nome}}</td>
+        <td>{{usuario.telefone}}</td>
+        <td>{{usuario.email}}</td>
+        <!-- <td><a [routerLink]="['/video-game-novo', videoGame.id]"><i class="fa fa-pencil"></i></a> </td>
+        <td><a [routerLink]="['/video-game-deletar', videoGame.id]"><i class="fa fa-eraser"></i></a> </td> -->
+    </tr>
+</table>
