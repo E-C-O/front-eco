@@ -1,3 +1,4 @@
+import { Globals } from './../../../model/globals';
 import { MessageService } from 'primeng/api';
 import { UsuarioService } from 'src/app/service/usuario/usuario.service';
 import { Globals } from 'src/app/model/globals';
@@ -16,7 +17,7 @@ export class CadastroAtualizarComponent implements OnInit {
 
   globalUser: Usuario;
 
-  usuario: Usuario = new Usuario;
+  usuario: Usuario = Globals.CADASTRO;
 
   constructor(
     private router: Router,
