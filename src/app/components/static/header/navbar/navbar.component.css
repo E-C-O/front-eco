@@ -5,8 +5,6 @@
     text-transform: uppercase;
     text-align: center;
   
-    
-
 }
 body,html{
     height: 100%;
@@ -40,13 +38,13 @@ body,html{
     .searchbar:hover > .search_input{
     padding: 0 10px;
     width: 450px;
-    caret-color: #fc766a;
+    caret-color: #fc766a!important;
     transition: width 0.4s linear;
     }
 
     .searchbar:hover > .search_icon{
-    background: white;
-    color: #e74c3c;
+    background: white!important;
+    color: #fc766a!important;
     }
 
     .search_icon{
@@ -57,7 +55,7 @@ body,html{
     justify-content: center;
     align-items: center;
     border-radius: 50%;
-    color:white;
+    color:white!important;
     text-decoration:none;
     }
 
