@@ -10,16 +10,16 @@ export class ProductsService {
   constructor(private http: HttpClient ) { }
 
   getAll(){
-    return this.http.get("http://localhost:8080/produto");
+    return this.http.get("http://31.220.50.40:8080/produto");
   }
   getById(idProduto: number){
-    return this.http.get(`http://localhost:8080/produto/${idProduto}`);
+    return this.http.get(`http://31.220.50.40:8080/produto/${idProduto}`);
   }
   insert(products:Produto){
-    return this.http.post(`http://localhost:8080/produto`,products);
+    return this.http.post(`http://31.220.50.40:8080/produto`,products);
   }
   update(products :Produto){
-    return this.http.put(`http://localhost:8080/produto`,products);
+    return this.http.put(`http://31.220.50.40:8080/produto`,products);
   }
 
 }
