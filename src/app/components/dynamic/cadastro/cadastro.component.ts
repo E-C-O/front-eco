@@ -24,7 +24,7 @@ export class CadastroComponent implements OnInit {
   usuarios = [];
 
 
-  senha : string;
+  senha: string;
   senha2: string;
 
 
@@ -35,11 +35,11 @@ export class CadastroComponent implements OnInit {
     private router: Router) {
   }
 
-  validaSenha(){
-    if(this.senha === this.senha2){
+  validaSenha() {
+    if (this.senha === this.senha2) {
       this.senhaNaoConferem = false;
     }
-    else{
+    else {
       this.senhaNaoConferem = true;
     }
   }
@@ -47,13 +47,18 @@ export class CadastroComponent implements OnInit {
   cadastrar() {
     this.validaSenha();
     this.messageService.clear();
-    if( this.senha == undefined || this.senha.length < 6){
-     
-      this.messageService.add({ key: 'error', life: 4000, summary: 'Senha muito fraca!', severity: 'error', detail: "A senha deve conter no mínimo 6 caractéres"});
+    if (this.usuario.email == undefined) {
+      this.messageService.add({ key: 'error', life: 4000, summary: 'Email Requerido!', severity: 'error' });
     }
-    else if(this.senhaNaoConferem){
-      this.messageService.add({ key: 'error', life: 400, summary: 'Senha inválida!', severity: 'error' });
-    }else{
+    if (this.senha == undefined) {
+      this.messageService.add({ key: 'error', life: 4000, summary: 'Senha Requerida!', severity: 'error' });
+    }
+    if (this.senha.length < 6) {
+      this.messageService.add({ key: 'error', life: 4000, summary: 'Senha muito fraca!', severity: 'error', detail: "A senha deve conter no mínimo 6 caractéres" });
+    }
+    else if (!this.senhaNaoConferem) {
+      this.messageService.add({ key: 'error', life: 400, summary: 'Senhas não conferem!', severity: 'error' });
+    } else {
       this.usuarioService.insert(this.usuario).subscribe((usuario: Usuario) => {
         this.usuario = usuario;
         this.success();

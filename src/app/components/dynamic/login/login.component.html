@@ -1,61 +1,43 @@
 <div class="container fonte">
     <div class="omb_login">
-        <h3 class="omb_authTitle">Login do Cliente <a href="#"></a></h3>
+        <h3 class="omb_authTitle">Login do Cliente</h3>
 
         <div class="row omb_row-sm-offset-3">
-            <div class="col-xs-12 col-sm-4">
+            <div class="col-1"></div>
+            <div class="col-4">
                 <form class="omb_loginForm" action="" autocomplete="off" method="POST">
                     <div class="input-group">
                         <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                        <input type="text" class="form-control" [(ngModel)]="userLogin.email" name="username" placeholder="email address">
+                        <input type="text" class="form-control" [(ngModel)]="userLogin.email" name="username"
+                            placeholder="email address">
                     </div>
                     <span class="help-block"></span>
 
                     <div class="input-group">
                         <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-                        <input type="password" [(ngModel)]="userLogin.senha" class="form-control" name="password" placeholder="Password">
+                        <input type="password" [(ngModel)]="userLogin.senha" class="form-control" name="password"
+                            placeholder="Password">
                     </div>
                     <span class="help-block"> </span>
 
                     <button class="btn btn-lg btn-primary btn-block" (click)="login()" type="submit">Login</button>
                     <p-toast key="global"></p-toast>
-                    <p-toast  [style]="{marginTop: '80px'}" position="top-right" [showTransitionOptions]="'100ms'" [hideTransitionOptions]="'10ms'" (onClose)="redirect()"></p-toast>
-                    <p-toast key="error" [style]="{marginTop: '80px'}" position="top-right" [showTransitionOptions]="'100ms'" [hideTransitionOptions]="'500ms'"></p-toast>
+                    <p-toast [style]="{marginTop: '80px'}" position="top-right" [showTransitionOptions]="'100ms'"
+                        [hideTransitionOptions]="'10ms'" (onClose)="redirect()"></p-toast>
+                    <p-toast key="error" [style]="{marginTop: '80px'}" position="top-right"
+                        [showTransitionOptions]="'100ms'" [hideTransitionOptions]="'500ms'"></p-toast>
 
                 </form>
             </div>
+            <div class="col-4"></div>
         </div>
-        <div class="row omb_row-sm-offset-3">
-            <div class="col-xs-12 col-sm-3">
-                <!-- <label class="checkbox">
-                    <input type="checkbox" value="remember-me"> Lembrar-me
-                </label> -->
-            </div>
-            <div class="col-xs-12 col-sm-3">
-                <!-- <p class="omb_forgotPwd">
-                    <a href="#">Esqueceu a senha?</a>
-                </p> -->
-            </div>
-        </div>
-        
 
-        <div class="row omb_row-sm-offset-3 omb_loginOr">
-            <div class="col-xs-12 col-sm-6">
-                <hr class="omb_hrOr">
-                <span class="omb_spanOr">ou</span>
-            </div>
-        </div>
-        
-        <div class="row omb_row-sm-offset-3 omb_socialButtons "  >
-            <!-- <div class="col-xs-8 col-sm-6">
-                <a href="https://web.facebook.com/" class="btn btn-lg btn-block omb_btn-facebook">
-                    <i class="fab fa-facebook-f"></i>
-                    <span class="hidden-xs"> Continuar com o Facebook </span>
-                </a>
-            </div> -->
+        <div class="row omb_row-sm-offset-3 omb_socialButtons ">
+
             <div class="col-xs-12 col-sm-4">
                 <p class="omb_forgotPwd">
-                    Não tem cadastro? <a style="color: black" [routerLink]="['/cadastro']" routerLinkActive="router-link-active">Cadastre-se</a>
+                    Não tem cadastro? <a style="color: black" [routerLink]="['/cadastro']"
+                        routerLinkActive="router-link-active">Cadastre-se</a>
                 </p>
             </div>
         </div>

@@ -1,3 +1,4 @@
+import { MessageService } from 'primeng/api/';
 
 import { Endereco } from 'src/app/model/endereco';
 import { Component, OnInit } from '@angular/core';
@@ -10,12 +11,15 @@ import { EnderecoService } from 'src/app/service/endereco/endereco.service';
   selector: 'app-endereco-list',
   templateUrl: './endereco-list.component.html',
   styleUrls: ['./endereco-list.component.css'],
-  providers: [ Globals]
+  providers: [ Globals,MessageService]
 })
 
 export class EnderecoListComponent implements OnInit {
 
-  constructor(private enderecoService: EnderecoService, private router : Router) { }
+  constructor(
+    private enderecoService: EnderecoService, 
+    private router : Router,
+    private messageService: MessageService) { }
 
   endereco: Endereco[];
   cadastro : Cadastro;
@@ -25,17 +29,18 @@ export class EnderecoListComponent implements OnInit {
   }
 
   findAll(){
-    this.enderecoService.getAll().subscribe((enderecoOut: Endereco[])=>{
-      this.endereco = enderecoOut;
-    })
+    this.endereco = Globals.CADASTRO.endereco;
+    // this.enderecoService.getAll().subscribe((enderecoOut: Endereco[])=>{
+    //   this.endereco = enderecoOut;
+    // })
   }
 
   remover(id: number){
     this.enderecoService.deleteById(id).subscribe((out: string)=>{
-      alert("Endereço removido!");
+      this.messageService.add({summary: "Endereço removido!", severity: "success"});
       this.findAll();
     },err=>{
-      alert("Erro ao remover endereço");
+      this.messageService.add({summary: "Erro ao remover endereço.", severity: "error"});
       this.findAll();
     })
   }

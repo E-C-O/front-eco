@@ -23,6 +23,13 @@ export class EnderecoAtualizarComponent implements OnInit {
 
   ngOnInit() {
     this.endereco.id = this.route.snapshot.params["id"];
+    this.achaEndereco();
+  }
+
+  achaEndereco(){
+    this.enderecoService.getById(this.endereco.id).subscribe((out: Endereco)=>{
+      this.endereco = out;
+    });
   }
 
   idValido(){

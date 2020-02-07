@@ -86,8 +86,7 @@
                 </div>
                 <div class="div">
                     <!-- <h5>Usuário</h5> -->
-                    <input name="categoria" placeholder="id da categoria" type="text" class="input" name="categoria"
-                        [(ngModel)]="categoriaId" required>
+                    <p-dropdown class="input"[options]="categorias" name ="dropdownCategoria" [(ngModel)]="categoriaId"></p-dropdown>
                 </div>
                 <div *ngIf="emailInval">
                     <h5 class="alert-danger">Requerido</h5>

@@ -23,9 +23,9 @@ export class PerfilComponent implements OnInit {
 
   ngOnInit() {
     if (Globals.CADASTRO == undefined) {
-      setTimeout(() => {
-        this.messageService.add({ key: 'global' ,severity: 'warn', summary: '((ECO))', detail: 'É preciso logar para continuar' });
-      });
+      // setTimeout(() => {
+      //   this.messageService.add({ key: 'global' ,severity: 'warn', summary: '((ECO))', detail: 'É preciso logar para continuar' });
+      // });
       this.router.navigate(['login']);
     }
     else {
@@ -33,9 +33,7 @@ export class PerfilComponent implements OnInit {
     }
   }
 
-  ngAfterViewInit() {
-
-  }
+  
 
 
 }

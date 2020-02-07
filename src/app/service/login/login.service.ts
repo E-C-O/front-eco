@@ -11,7 +11,7 @@ export class LoginService {
   constructor(private http: HttpClient) { }
 
   login(login : Login){
-      return this.http.post(`http://localhost:8080/login`, login);
+      return this.http.post(`http://31.220.50.40:8080/login`, login);
   }
 
 }
