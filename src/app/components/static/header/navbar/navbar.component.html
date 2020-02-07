@@ -34,13 +34,13 @@
   <!--SEGUNDA NAV BAR COM ITENS-->
   <nav id="menu" class="navbar">
     <div class="nav-inner">
-      <div class="navbar-header"><span id="category" class="visible-xs">Categorias</span>
+      <div class="navbar-header"><span id="category" class="visible-xs"     >Categorias </span>
         <button type="button" class="btn btn-navbar navbar-toggle"><i class="fa fa-bars"></i></button>
       </div>
       <div class="navbar-collapse">
         <ul class="main-navigation">
 
-          <li><a class="active parent">Produtos</a>
+          <li><a class="active parent"> Produtos </a>
             <ul>
               <li><a [routerLink]="['/produto/produtos']" routerLinkActive="router-link-active" >Todos</a></li>
               <li><a [routerLink]="['/produto/produto']" routerLinkActive="router-link-active"> Buscar</a></li>
@@ -50,12 +50,12 @@
           </li>
 
           <li><a [routerLink]="'/associados'" class="parent">Seja (( ECO ))</a> </li>
-          <li><a [routerLink]="" class="active parent">Conta</a>
+          <li><a [routerLink]="" class="active parent"> Conta </a>
             <ul>
-              <li><a [routerLink]="'/cadastro'" *ngIf='!log2'>Cadastro</a></li>
-              <li><a [routerLink]="'/perfil'" *ngIf='!log2'>Minha conta</a></li>
-              <li><a [routerLink]="'/login'" *ngIf='!log2'>Logar</a></li>
-              <!-- <li><a  *ngIf='!log2'>Esqueci a minha senha</a></li> -->
+              <li><a [routerLink]="'/cadastro'" *ngIf='!log2'> Cadastro </a></li>
+              <li><a [routerLink]="'/perfil'" *ngIf='!log2'> Minha conta </a></li>
+              <li><a [routerLink]="'/login'" *ngIf='!log2'> Logar </a></li>
+  
             </ul>
           <li><a class="active parent">Saiba mais</a>
             <ul>
