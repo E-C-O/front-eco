@@ -5,13 +5,14 @@
     <div class="row col-12" style="padding-top: 50px">
         <div class="col-3" >
             <div>
+                <p-toast></p-toast>
                 <p-card style="text-align: left; "subheader="Informações"
                     [style]="{width: '300px'}" styleClass="ui-card-shadow">
                     <p-header>
-                        <h3 style="padding-left: 10px"class="font">{{user.nome}}</h3>
+                        <h3 style="padding-left: 10px"class="font">{{user?.nome}}</h3>
                     </p-header>
                     <div >
-                        <p>Email:  {{user.email}}</p>
+                        <p>Email:  {{user?.email}}</p>
                         <p>Lorem ipsum dolor</p>
                         <p> sit amet, consectetur</p>
                     </div>

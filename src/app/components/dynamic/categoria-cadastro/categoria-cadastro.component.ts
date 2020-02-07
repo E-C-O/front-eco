@@ -1,6 +1,5 @@
+import { MessageService } from 'primeng/api';
 import { CategoriaService } from 'src/app/service/categoria/categoria.service';
-
-
 import { Component, OnInit } from '@angular/core';
 import { Categoria } from 'src/app/model/categoria';
 import { Globals } from 'src/app/model/globals';
@@ -10,7 +9,7 @@ import { Router } from '@angular/router';
   selector: 'app-categoria-cadastro',
   templateUrl: './categoria-cadastro.component.html',
   styleUrls: ['./categoria-cadastro.component.css'],
-  providers: [Globals]
+  providers: [Globals, MessageService]
 })
 export class CategoriaCadastroComponent implements OnInit {
 
@@ -23,7 +22,8 @@ export class CategoriaCadastroComponent implements OnInit {
 
   constructor(
     private categoriaService: CategoriaService,
-    private router: Router
+    private router: Router,
+    private messageService: MessageService
   ) { }
 
   ngOnInit() {
@@ -42,10 +42,11 @@ export class CategoriaCadastroComponent implements OnInit {
   remover() {
     this.categoriaService.delete(this.categoria.id).subscribe(() => {
       this.listarCategoria();
-      alert("removido com sucesso");
+      this.messageService.add({ summary: "Removido com sucesso", severity: "success" })
+
     }, err => {
       this.listarCategoria();
-      alert("erro ao remover");
+      this.messageService.add({ summary: "Erro ao remover", severity: "error" })
     });
     this.listarCategoria();
   }
@@ -53,20 +54,24 @@ export class CategoriaCadastroComponent implements OnInit {
   cadastrar() {
 
     this.categoriaService.insert(this.categoria).subscribe((out: Categoria) => {
-      alert("Cadastrado com sucesso!");
       this.listarCategoria();
+      this.messageService.add({ summary: "Cadastrado com sucesso", severity: "success" })
     }, err => {
-      alert("Erro ao cadastrar");
+      this.messageService.add({ summary: "Erro ao remover", severity: "error" })
     });
   }
 
   atualizar() {
-    this.categoriaService.update(this.altCategoria).subscribe(() => {
-      alert("Atualizado com sucesso!");
-      this.listarCategoria();
-    }, err => {
-      alert("Erro ao atualizar.");
-    });
+    if (this.altCategoria.id == undefined) {
+      this.messageService.add({ summary: "Erro ao atualizar", severity: "error" });
+    } else {
+      this.categoriaService.update(this.altCategoria).subscribe(() => {
+        this.messageService.add({ summary: "Atualizado com sucesso", severity: "success" })
+        this.listarCategoria();
+      }, err => {
+        this.messageService.add({ summary: "Erro ao atualizar", severity: "error" })
+      });
+    }
   }
 
   listarCategoria() {
@@ -85,5 +90,7 @@ export class CategoriaCadastroComponent implements OnInit {
       });
     }
   }
+
+
 
 }

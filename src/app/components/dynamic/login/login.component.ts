@@ -1,20 +1,24 @@
 import { LoginService } from './../../../service/login/login.service';
 import { Component, OnInit } from '@angular/core';
-import { Cadastro } from 'src/app/model/cadastro';
 import { Router } from '@angular/router';
 import { Globals } from 'src/app/model/globals';
 import { Login } from 'src/app/model/login';
 import { Usuario } from 'src/app/model/usuario';
+import { MessageService } from 'primeng/api';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
-  providers: [Globals]
+  providers: [Globals, MessageService]
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private loginService: LoginService, private router: Router) {
+  constructor(
+    private loginService: LoginService,
+    private router: Router,
+    private messageService: MessageService
+  ) {
   }
 
   emailInval: boolean = false;
@@ -24,9 +28,9 @@ export class LoginComponent implements OnInit {
   userLogin: Login = new Login();
 
   ngOnInit() {
-    if(status)
+    if (status)
       alert("online");
-    
+
     Globals.CADASTRO = undefined;
   }
 
@@ -84,16 +88,29 @@ export class LoginComponent implements OnInit {
 
     if (this.emailInval || this.senhaIsInval) {
       this.loginService.login(this.userLogin).subscribe((usuario: Usuario) => {
-        alert("Login realizado com sucesso");
+        // alert("Login realizado com sucesso");
         Globals.CADASTRO = usuario;
         Globals.STATUS = true;
-        this.router.navigate(['home']);
+        this.success();
+        // this.router.navigate(['home']);
       }, err => {
         Globals.STATUS = false;
-        alert("Email ou senha inválidos.");
+        this.failure();
       });;
     }
   }
+  
+  failure(){
+    this.messageService.clear();
+    this.messageService.add({ key: 'error',  life: 400 ,closable: true , summary: 'Login inválido!', severity: 'error'});
+  }
 
-
+  success() {
+    this.messageService.clear();
+    this.messageService.add({ life: 1000 ,closable: true , summary: 'Login realizado!', severity: 'success' });
+  }
+  
+  redirect(){
+    this.router.navigate(['home']);
+  }
 }

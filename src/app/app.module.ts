@@ -32,12 +32,15 @@ import { CategoriaCadastroComponent } from './components/dynamic/categoria-cadas
 import { PerfilComponent } from './components/dynamic/perfil/perfil.component';
 import {DropdownModule} from 'primeng/dropdown';
 import {CardModule} from 'primeng/card';
+import {ToastModule} from 'primeng/toast';
 import { EnderecoListComponent } from './components/dynamic/endereco/endereco-list/endereco-list.component';
 import { EnderecoIdComponent } from './components/dynamic/endereco/endereco-id/endereco-id.component';
 import { EnderecoAtualizarComponent } from './components/dynamic/endereco/endereco-atualizar/endereco-atualizar.component';
 import { EnderecoCadastroComponent } from './components/dynamic/endereco/endereco-cadastro/endereco-cadastro.component';
 import { CadastroAtualizarComponent } from './components/dynamic/cadastro-atualizar/cadastro-atualizar.component';
 import { VendaListarComponent } from './components/dynamic/venda-listar/venda-listar.component';
+import { MessageService } from 'primeng/api';
+
 
 
 
@@ -74,6 +77,7 @@ import { VendaListarComponent } from './components/dynamic/venda-listar/venda-li
     VendaListarComponent,
     
     
+    
 
 
   ],
@@ -86,12 +90,15 @@ import { VendaListarComponent } from './components/dynamic/venda-listar/venda-li
     BrowserAnimationsModule,
     DropdownModule,
     MultiSelectModule,
-    CardModule
+    CardModule,
+    ToastModule,
     
     // MDBBootstrapModule.forRoot()
   ],
   providers: [CadastroService,
-    LoginService],
+              LoginService,
+              MessageService 
+            ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

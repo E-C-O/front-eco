@@ -1,14 +1,16 @@
+import { MessageService } from 'primeng/api';
 import { UsuarioService } from 'src/app/service/usuario/usuario.service';
 import { Globals } from 'src/app/model/globals';
 import { Component, OnInit } from '@angular/core';
 import { Usuario } from 'src/app/model/usuario';
 import { Router } from '@angular/router';
 
+
 @Component({
   selector: 'app-cadastro-atualizar',
   templateUrl: './cadastro-atualizar.component.html',
   styleUrls: ['./cadastro-atualizar.component.css'],
-  providers: [Globals]
+  providers: [Globals, MessageService]
 })
 export class CadastroAtualizarComponent implements OnInit {
 
@@ -16,7 +18,11 @@ export class CadastroAtualizarComponent implements OnInit {
 
   usuario: Usuario = new Usuario;
 
-  constructor(private router: Router, private usuarioService: UsuarioService) { }
+  constructor(
+    private router: Router,
+    private usuarioService: UsuarioService,
+    private messageService: MessageService
+    ) { }
 
   ngOnInit() {
     if (Globals.CADASTRO == undefined) {
@@ -30,11 +36,11 @@ export class CadastroAtualizarComponent implements OnInit {
   atualizar() {
     this.usuario.id = this.globalUser.id;
     this.usuarioService.update(this.usuario).subscribe(() => {
-      alert("Atualizado com sucesso");
+      this.messageService.add({summary: "Atualizado com sucesso", severity: "success"});
       Globals.CADASTRO = this.usuario;
       this.router.navigate(["home"]);
     }, err => {
-      alert("Erro ao atualizar");
+      this.messageService.add({summary: "Erro ao atualizar", severity: "error"});
     })
   }
 

@@ -18,6 +18,10 @@
                     <span class="help-block"> </span>
 
                     <button class="btn btn-lg btn-primary btn-block" (click)="login()" type="submit">Login</button>
+                    <p-toast key="global"></p-toast>
+                    <p-toast  [style]="{marginTop: '80px'}" position="top-right" [showTransitionOptions]="'100ms'" [hideTransitionOptions]="'10ms'" (onClose)="redirect()"></p-toast>
+                    <p-toast key="error" [style]="{marginTop: '80px'}" position="top-right" [showTransitionOptions]="'100ms'" [hideTransitionOptions]="'500ms'"></p-toast>
+
                 </form>
             </div>
         </div>

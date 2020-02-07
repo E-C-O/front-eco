@@ -58,10 +58,12 @@
 
 
                                     <button (click)="cadastrar()" class="btn btn-primary">Cadastrar</button>
-                                    <button [routerLink]="['/cadastro-listar']" class="btn btn-primary">Listar</button>
-                                    <button (click)="atualizar()" class="btn btn-primary">Atualizar</button>
+                            
                                 </form>
 
+                                <p-toast  [style]="{marginTop: '80px'}" position="top-right" [showTransitionOptions]="'100ms'" [hideTransitionOptions]="'10ms'" (onClose)="redirect()"></p-toast>
+                                <p-toast key="error" [style]="{marginTop: '80px'}" position="top-right" [showTransitionOptions]="'100ms'" [hideTransitionOptions]="'500ms'"></p-toast>
+            
 
                             </div>
                         </div>

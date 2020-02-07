@@ -1,13 +1,14 @@
-import { Cadastro } from 'src/app/model/cadastro';
-import { CadastroService } from 'src/app/service/cadastro/cadastro.service';
+import { MessageService } from 'primeng/api';
 import { Component, OnInit } from '@angular/core';
 import { Usuario } from 'src/app/model/usuario';
 import { UsuarioService } from 'src/app/service/usuario/usuario.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cadastro',
   templateUrl: './cadastro.component.html',
-  styleUrls: ['./cadastro.component.css']
+  styleUrls: ['./cadastro.component.css'],
+  providers: [MessageService]
 })
 export class CadastroComponent implements OnInit {
 
@@ -28,46 +29,36 @@ export class CadastroComponent implements OnInit {
 
 
 
-  constructor(private usuarioService: UsuarioService) {
+  constructor(
+    private usuarioService: UsuarioService,
+    private messageService: MessageService,
+    private router: Router) {
   }
-
-
-
-
-  atualizar() {
-    this.usuarioService.getAll().subscribe((usuarios: Usuario[]) => {
-      this.usuarios = usuarios;
-    }, err => {
-      console.log(`Erro cod: ${err.status}`);
-    });
-
-    this.usuarios.forEach(usuario => {
-      if (usuario.email == this.usuario.email)
-        this.emailInvalido = true;
-      this.usuario.id = usuario.idUsuario;
-    });
-
-    this.usuarioService.update(this.usuario).subscribe((usuarios: Usuario[]) => {
-      this.usuarios = usuarios;
-    }, err => {
-      console.log(`Erro cod: ${err.status}`);
-    });
-  }
-
-
-
 
 
   cadastrar() {
     this.usuarioService.insert(this.usuario).subscribe((usuario: Usuario) => {
       this.usuario = usuario;
-      alert("Usuario cadastrado");
+      this.success();
     }, err => {
       console.log(`Erro cod: ${err.status}`);
-      alert("Erro ao cadastrar");
+      this.failure();
     });
   }
 
+  failure(){
+    this.messageService.clear();
+    this.messageService.add({ key: 'error',  life: 400 ,closable: true , summary: 'Login inválido!', severity: 'error'});
+  }
+
+  success() {
+    this.messageService.clear();
+    this.messageService.add({ life: 1000 ,closable: true , summary: 'Login realizado!', severity: 'success' });
+  }
+  
+  redirect(){
+    this.router.navigate(['login']);
+  }
 
 
 }
