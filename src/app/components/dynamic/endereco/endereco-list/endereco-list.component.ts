@@ -21,6 +21,7 @@ export class EnderecoListComponent implements OnInit {
   cadastro : Cadastro;
 
   ngOnInit() {
+    window.scrollTo(0,0);
     this.findAll();
   }
 

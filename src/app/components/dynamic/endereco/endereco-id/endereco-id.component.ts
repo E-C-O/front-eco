@@ -20,6 +20,7 @@ export class EnderecoIdComponent implements OnInit {
   constructor(private enderecoService: EnderecoService) { }
 
   ngOnInit() {
+    window.scrollTo(0,0);
     this.consulta = false;
   }
   searchClick(){

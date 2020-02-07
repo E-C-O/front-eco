@@ -28,6 +28,7 @@ export class LoginComponent implements OnInit {
   userLogin: Login = new Login();
 
   ngOnInit() {
+    window.scrollTo(0,0);
     if (status)
       alert("online");
 

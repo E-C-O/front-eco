@@ -1,7 +1,7 @@
 import { Globals } from './../../../model/globals';
 import { MessageService } from 'primeng/api';
 import { UsuarioService } from 'src/app/service/usuario/usuario.service';
-import { Globals } from 'src/app/model/globals';
+
 import { Component, OnInit } from '@angular/core';
 import { Usuario } from 'src/app/model/usuario';
 import { Router } from '@angular/router';
@@ -26,6 +26,7 @@ export class CadastroAtualizarComponent implements OnInit {
     ) { }
 
   ngOnInit() {
+    window.scrollTo(0,0);
     if (Globals.CADASTRO == undefined) {
       this.router.navigate(['login']);
     }

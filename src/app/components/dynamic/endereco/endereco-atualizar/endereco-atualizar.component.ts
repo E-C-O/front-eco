@@ -22,6 +22,7 @@ export class EnderecoAtualizarComponent implements OnInit {
   }
 
   ngOnInit() {
+    window.scrollTo(0,0);
     this.endereco.id = this.route.snapshot.params["id"];
   }
 

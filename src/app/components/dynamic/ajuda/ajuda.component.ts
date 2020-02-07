@@ -17,6 +17,7 @@ export class AjudaComponent implements OnInit {
   cadastro : Usuario;
   
   ngOnInit() {
+    window.scrollTo(0,0);
     if (Globals.CADASTRO == undefined) {
       // this.router.navigate(['login']);
     } 

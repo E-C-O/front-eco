@@ -16,6 +16,7 @@ export class NavbarComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    window.scrollTo(0,0);
 
     this.usuario = Globals.CADASTRO;
 

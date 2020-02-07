@@ -23,6 +23,7 @@ export class EnderecoCadastroComponent implements OnInit {
   }
 
   ngOnInit() {
+    window.scrollTo(0,0);
   }
 
   cadastrar() {

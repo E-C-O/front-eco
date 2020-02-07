@@ -23,6 +23,7 @@ export class ProdutoAtualizarComponent implements OnInit {
   }
 
   ngOnInit() {
+    window.scrollTo(0,0);
   }
 
   idValido(){

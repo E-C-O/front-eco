@@ -17,6 +17,7 @@ export class ProdutoComponent implements OnInit {
 
 
   ngOnInit() {
+    window.scrollTo(0,0);
     if (Globals.CADASTRO == undefined) {
       alert("Faça login para continuar");
       this.router.navigate(['/login']);

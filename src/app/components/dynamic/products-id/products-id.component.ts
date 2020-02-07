@@ -16,6 +16,7 @@ export class ProductsIdComponent implements OnInit {
   constructor(private ProductsService: ProductsService) { }
 
   ngOnInit() {
+    window.scrollTo(0,0);
     this.consulta = false;
   }
   searchClick(){

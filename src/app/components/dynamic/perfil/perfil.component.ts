@@ -22,6 +22,7 @@ export class PerfilComponent implements OnInit {
 
 
   ngOnInit() {
+    window.scrollTo(0,0);
     if (Globals.CADASTRO == undefined) {
       setTimeout(() => {
         this.messageService.add({ key: 'global' ,severity: 'warn', summary: '((ECO))', detail: 'É preciso logar para continuar' });

@@ -13,6 +13,7 @@ import { Router } from '@angular/router';
 export class CadastroComponent implements OnInit {
 
   ngOnInit() {
+    window.scrollTo(0,0);
   }
 
   usuario : Usuario = new Usuario();
