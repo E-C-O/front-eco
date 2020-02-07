@@ -15,7 +15,7 @@ export class CadastroComponent implements OnInit {
   ngOnInit() {
   }
 
-  usuario : Usuario = new Usuario();
+  usuario: Usuario = new Usuario();
 
 
   senhaNaoConferem: boolean = true;
@@ -24,7 +24,7 @@ export class CadastroComponent implements OnInit {
   usuarios = [];
 
 
-
+  senha : string;
   senha2: string;
 
 
@@ -35,30 +35,49 @@ export class CadastroComponent implements OnInit {
     private router: Router) {
   }
 
-
-  cadastrar() {
-    this.usuarioService.insert(this.usuario).subscribe((usuario: Usuario) => {
-      this.usuario = usuario;
-      this.success();
-    }, err => {
-      console.log(`Erro cod: ${err.status}`);
-      this.failure();
-    });
+  validaSenha(){
+    if(this.senha === this.senha2){
+      this.senhaNaoConferem = false;
+    }
+    else{
+      this.senhaNaoConferem = true;
+    }
   }
 
-  failure(){
+  cadastrar() {
+    this.validaSenha();
     this.messageService.clear();
-    this.messageService.add({ key: 'error',  life: 400 ,closable: true , summary: 'Login inválido!', severity: 'error'});
+    if( this.senha == undefined || this.senha.length < 6){
+     
+      this.messageService.add({ key: 'error', life: 4000, summary: 'Senha muito fraca!', severity: 'error', detail: "A senha deve conter no mínimo 6 caractéres"});
+    }
+    else if(this.senhaNaoConferem){
+      this.messageService.add({ key: 'error', life: 400, summary: 'Senha inválida!', severity: 'error' });
+    }else{
+      this.usuarioService.insert(this.usuario).subscribe((usuario: Usuario) => {
+        this.usuario = usuario;
+        this.success();
+      }, err => {
+        console.log(`Erro cod: ${err.status}`);
+        this.failure();
+      });
+    }
+  }
+
+  failure() {
+    this.messageService.clear();
+    this.messageService.add({ key: 'error', life: 400, summary: 'Cadastro inválido!', severity: 'error' });
   }
 
   success() {
     this.messageService.clear();
-    this.messageService.add({ life: 1000 ,closable: true , summary: 'Login realizado!', severity: 'success' });
+    this.messageService.add({ life: 1000, summary: 'Cadastro realizado!', severity: 'success' });
   }
-  
-  redirect(){
+
+  redirect() {
     this.router.navigate(['login']);
   }
+
 
 
 }

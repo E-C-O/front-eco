@@ -15,4 +15,8 @@ export class FooterComponent implements OnInit {
   sobeTopo(){
     window.scroll({left: 0, top: 0, behavior: 'smooth'})
   }
+
+  topo(){
+    window.scrollTo(0,0);
+  }
 }
