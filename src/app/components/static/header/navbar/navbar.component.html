@@ -16,11 +16,12 @@
   </div>
   <div class="container h-100">
     <div class="d-flex justify-content-center h-100">
-      <img src="../../../../../assets/logo_novo.png" width="150px" height="150px">
+      <img style="cursor: pointer;" [routerLink]="['/home']" routerLinkActive="router-link-active" src="../../../../../assets/logo_novo.png"
+        width="150px" height="150px">
 
       <div class="searchbar">
         <input class="search_input" type="text" name="" placeholder="Buscar">
-        <a href="#" class="search_icon"><i class="fas fa-search"></i></a>
+        <a class="search_icon"><i class="fas fa-search"></i></a>
       </div>
 
     </div>
@@ -39,24 +40,24 @@
       <div class="navbar-collapse">
         <ul class="main-navigation">
 
-          <li><a  class="active parent">Produtos</a>
+          <li><a class="active parent">Produtos</a>
             <ul>
-              <li><a [routerLink]="'/produto'">Todos</a></li>
-              <li><a [routerLink]="">Buscar</a></li>
-              <li><a [routerLink]="'/produto-cadastro'">Cadastro</a></li>
-              <li><a [routerLink]="'/produto-atualizacao'">Atualizar</a></li>
+              <li><a [routerLink]="['/produto/produtos']" routerLinkActive="router-link-active" >Todos</a></li>
+              <li><a [routerLink]="['/produto/produto']" routerLinkActive="router-link-active"> Buscar</a></li>
+              <li><a [routerLink]="['/produto/cadastro']" routerLinkActive="router-link-active"> Cadastro</a></li>
+              <li><a [routerLink]="['/produto/atualizar']" routerLinkActive="router-link-active"> Atualizar</a></li>
             </ul>
           </li>
-          
+
           <li><a [routerLink]="'/associados'" class="parent">Seja (( ECO ))</a> </li>
           <li><a [routerLink]="" class="active parent">Conta</a>
             <ul>
               <li><a [routerLink]="'/cadastro'" *ngIf='!log2'>Cadastro</a></li>
-              <li><a [routerLink]="'/login'" *ngIf='log2'>Minha conta</a></li>
+              <li><a [routerLink]="'/perfil'" *ngIf='!log2'>Minha conta</a></li>
               <li><a [routerLink]="'/login'" *ngIf='!log2'>Logar</a></li>
-              <li><a href="#" *ngIf='!log2'>Esqueci a minha senha</a></li>
+              <!-- <li><a  *ngIf='!log2'>Esqueci a minha senha</a></li> -->
             </ul>
-          <li><a href="#" class="active parent">Saiba mais</a>
+          <li><a class="active parent">Saiba mais</a>
             <ul>
               <li><a [routerLink]="'/contato'">Contato</a></li>
               <li><a [routerLink]="'/empresa'">A (( ECO ))</a></li>

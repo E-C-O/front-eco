@@ -15,6 +15,7 @@ export class ProdutoAtualizarComponent implements OnInit {
   categoriaId : number;
   categoria : Categoria = new Categoria();
   idValid : boolean = true;
+  emailInval: Boolean;
 
   constructor(private produtoService: ProdutoService,
     private route: ActivatedRoute,

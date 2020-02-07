@@ -39,13 +39,12 @@ const routes: Routes = [
         children: [
           { path: 'produtos', component: ProductsListComponent },
           { path: 'produto', component: ProductsIdComponent },
-          { path: 'produtoCadastro', component: ProdutoCadastroComponent },
-          { path: 'produtoAtualizar', component: ProdutoAtualizarComponent },
-          { path: 'produtoCadastro/:id', component: ProdutoCadastroComponent },
-        ]},
-        
+          { path: 'cadastro', component: ProdutoCadastroComponent },
+          { path: 'atualizar', component: ProdutoAtualizarComponent },
+          // { path: 'produtoCadastro/:id', component: ProdutoCadastroComponent },
+        ]}, 
   { path: 'cadastro', component: CadastroComponent },
-  { path: 'cadastro-listar', component: CadastroListarComponent },
+  // { path: 'cadastro-listar', component: CadastroListarComponent },
   { path: 'login', component: LoginComponent },
   { path: 'ajuda', component: AjudaComponent },
   { path:'empresa', component: SobreNosEmpresaComponent},

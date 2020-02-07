@@ -20,7 +20,7 @@
                 <div class="div">
                     <!-- <h5>Usuário</h5> -->
                     <input name="titulo" placeholder="Nome do produto" type="text" class="input"
-                        (keyup)="emailIsInval()" [ngModelOptions]="{standalone: true}" [(ngModel)]="produto.nome"
+                          [ngModelOptions]="{standalone: true}" [(ngModel)]="produto.nome"
                         required>
                 </div>
                 <div *ngIf="emailInval">
@@ -35,7 +35,7 @@
                 </div>
                 <div class="div">
                     <!-- <h5>Usuário</h5> -->
-                    <input name="detalhes" placeholder="Detalhes" type="text" class="input" (keyup)="emailIsInval()"
+                    <input name="detalhes" placeholder="Detalhes" type="text" class="input"  
                         [ngModelOptions]="{standalone: true}" [(ngModel)]="produto.descricao" required>
                 </div>
                 <div *ngIf="emailInval">
@@ -50,7 +50,7 @@
                 </div>
                 <div class="div">
                     <!-- <h5>Usuário</h5> -->
-                    <input name="detalhes" placeholder="Marca" type="text" class="input" (keyup)="emailIsInval()"
+                    <input name="detalhes" placeholder="Marca" type="text" class="input"  
                         [ngModelOptions]="{standalone: true}" [(ngModel)]="produto.marca" required>
                 </div>
                 <div *ngIf="emailInval">
@@ -64,7 +64,7 @@
                 </div>
                 <div class="div">
                     <!-- <h5>Usuário</h5> -->
-                    <input name="preco" placeholder="Preço" type="text" class="input" (keyup)="emailIsInval()"
+                    <input name="preco" placeholder="Preço" type="text" class="input"  
                         [ngModelOptions]="{standalone: true}" [(ngModel)]="produto.valor" required>
                 </div>
                 <div *ngIf="emailInval">
@@ -79,7 +79,7 @@
                 <div class="div">
                     <!-- <h5>Usuário</h5> -->
                     <input name="qtdEstoque" placeholder="Quantidade em estoque" type="text" class="input"
-                        (keyup)="emailIsInval()" [ngModelOptions]="{standalone: true}" [(ngModel)]="produto.qtdEstoque"
+                          [ngModelOptions]="{standalone: true}" [(ngModel)]="produto.qtdEstoque"
                         required>
                 </div>
                 <div *ngIf="emailInval">
@@ -94,7 +94,7 @@
                 <div class="div">
                     <!-- <h5>Usuário</h5> -->
                     <!-- <input name="categoria" placeholder="Id da categoria" type="text" class="input"
-                        (keyup)="emailIsInval()" [ngModelOptions]="{standalone: true}" [(ngModel)]="categoriaId"
+                          [ngModelOptions]="{standalone: true}" [(ngModel)]="categoriaId"
                         required> -->
                         <p-dropdown class="input"[options]="categorias" name ="dropdownCategoria" [(ngModel)]="categoriaId"></p-dropdown>
                 </div>

@@ -13,7 +13,7 @@ import { Globals } from 'src/app/model/globals';
 })
 export class EnderecoCadastroComponent implements OnInit {
   
-
+  emailInval: Boolean;
   usuarioId: number;
   endereco: Endereco = new Endereco();
 

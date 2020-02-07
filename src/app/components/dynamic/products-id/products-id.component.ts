@@ -12,6 +12,7 @@ export class ProductsIdComponent implements OnInit {
   idProduto: number;
   products: Produto = new Produto();
   consulta: boolean;
+  emailInval: Boolean;
   constructor(private ProductsService: ProductsService) { }
 
   ngOnInit() {

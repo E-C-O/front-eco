@@ -15,6 +15,7 @@ export class EnderecoIdComponent implements OnInit {
 
   endereco: Endereco;
   consulta: boolean;
+  emailInval: Boolean;
 
   constructor(private enderecoService: EnderecoService) { }
 

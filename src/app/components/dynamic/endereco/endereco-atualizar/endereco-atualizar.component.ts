@@ -13,7 +13,7 @@ export class EnderecoAtualizarComponent implements OnInit {
 
   endereco : Endereco = new Endereco();
   idValid : boolean = true;
-  
+  emailInval: Boolean;
 
   constructor(
     private enderecoService: EnderecoService,

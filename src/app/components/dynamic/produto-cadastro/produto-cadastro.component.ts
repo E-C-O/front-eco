@@ -24,6 +24,7 @@ export class ProdutoCadastroComponent implements OnInit {
 
   categoria : Categoria = new Categoria();
 
+  emailInval: Boolean;
 
 
 

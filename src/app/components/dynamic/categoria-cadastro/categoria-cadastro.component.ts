@@ -18,6 +18,7 @@ export class CategoriaCadastroComponent implements OnInit {
   altCategoria: Categoria = new Categoria();
   categoria: Categoria = new Categoria();
   categorias: Categoria[];
+  emailInval: Boolean;
   nomeCategoria: string;
 
   constructor(
