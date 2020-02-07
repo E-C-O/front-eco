@@ -1,3 +1,12 @@
+.colorprop{
+    color: #000;
+    background: #88c6c3;
+    font-family: 'poppins', sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: bold;
+  
+}
 .fundofrete{
     background-color: black;
     width: 100%;
