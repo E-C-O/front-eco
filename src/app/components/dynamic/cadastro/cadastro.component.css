@@ -1,25 +1,46 @@
-.fonte{
-    font-family: 'poppins', sans-serif;
-}
 
-.titulo{
-    color: #588068;
-    text-transform: uppercase;
-}
-
-.alinhamento{
+.divider-text {
+    position: relative;
     text-align: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 
-hr{
-  
-    background-color: #588068;
-    height: 5px;
-    box-sizing: border-box;
+.divider-text span {
+    padding: 7px;
+    font-size: 12px;
+    position: relative;
+    z-index: 2;
+}
+
+.divider-text:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    border-bottom: 1px solid #f5f3f5;
+    top: 55%;
+    left: 0;
+    z-index: 1;
+}
+
+.btn-block {
+    background-color: #fc766a!important;
+    color: #fff;
+}
+
+.container {
+    background-color: white;
+    font-family: 'poppins', sans-serif;
     
 }
 
-#subtitulo{
+.card {
+    background-color: white;
     
-    font-size: small;
+}
+
+.card-title {
+    color: #88c6c3;
+    font-weight: bolder;
+    text-transform: uppercase;
 }
