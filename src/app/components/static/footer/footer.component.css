@@ -30,6 +30,7 @@ footer {
 footer p, a {
     font-size: 12px;
     font-family: 'poppins', sans-serif;
+    text-transform: uppercase;
 }
 
 footer h6 {
