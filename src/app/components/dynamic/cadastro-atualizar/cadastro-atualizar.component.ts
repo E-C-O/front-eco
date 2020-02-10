@@ -1,4 +1,3 @@
-import { Globals } from './../../../model/globals';
 import { MessageService } from 'primeng/api';
 import { UsuarioService } from 'src/app/service/usuario/usuario.service';
 import { Globals } from 'src/app/model/globals';

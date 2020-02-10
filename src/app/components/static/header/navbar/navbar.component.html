@@ -1,6 +1,6 @@
-<div class="card colorprop">
+<div class="card fundofrete text1">
   <div class="card-body">
-    Ganhe 10% de desconto na primeira compra
+    Ganhe 10% na primeira compra
   </div>
 </div>
 
@@ -9,40 +9,35 @@
     <div class="row">
       <div class="col-sm-12">
 
-
-
       </div>
     </div>
   </div>
   <div class="container h-100">
     <div class="d-flex justify-content-center h-100">
-      <img style="cursor: pointer;" [routerLink]="['/home']" routerLinkActive="router-link-active" src="../../../../../assets/logo_novo.png"
-        width="150px" height="150px">
+      <img style="cursor: pointer;" [routerLink]="['/home']" routerLinkActive="router-link-active"
+        src="../../../../../assets/logo_novo.png" width="160px" height="130px">
 
-      <div class="searchbar">
-        <input class="search_input" type="text" name="" placeholder="Buscar">
-        <a class="search_icon"><i class="fas fa-search"></i></a>
-      </div>
+
 
     </div>
   </div>
 
-  <div class="estilo">
+  <!-- <div class="estilo">
 
-  </div>
+  </div> -->
 
   <!--SEGUNDA NAV BAR COM ITENS-->
   <nav id="menu" class="navbar">
     <div class="nav-inner">
-      <div class="navbar-header"><span id="category" class="visible-xs">Categorias</span>
+      <div class="navbar-header"><span id="category" class="visible-xs">Categorias </span>
         <button type="button" class="btn btn-navbar navbar-toggle"><i class="fa fa-bars"></i></button>
       </div>
       <div class="navbar-collapse">
         <ul class="main-navigation">
 
-          <li><a class="active parent">Produtos</a>
+          <li><a class="active parent"> Produtos </a>
             <ul>
-              <li><a [routerLink]="['/produto/produtos']" routerLinkActive="router-link-active" >Todos</a></li>
+              <li><a [routerLink]="['/produto/produtos']" routerLinkActive="router-link-active">Todos</a></li>
               <li><a [routerLink]="['/produto/produto']" routerLinkActive="router-link-active"> Buscar</a></li>
               <li><a [routerLink]="['/produto/cadastro']" routerLinkActive="router-link-active"> Cadastro</a></li>
               <li><a [routerLink]="['/produto/atualizar']" routerLinkActive="router-link-active"> Atualizar</a></li>
@@ -50,12 +45,12 @@
           </li>
 
           <li><a [routerLink]="'/associados'" class="parent">Seja (( ECO ))</a> </li>
-          <li><a [routerLink]="" class="active parent">Conta</a>
+          <li><a [routerLink]="" class="active parent"> Conta </a>
             <ul>
-              <li><a [routerLink]="'/cadastro'" *ngIf='!log2'>Cadastro</a></li>
-              <li><a [routerLink]="'/perfil'" *ngIf='!log2'>Minha conta</a></li>
-              <li><a [routerLink]="'/login'" *ngIf='!log2'>Logar</a></li>
-              <!-- <li><a  *ngIf='!log2'>Esqueci a minha senha</a></li> -->
+              <li><a [routerLink]="'/cadastro'" *ngIf='!log2'> Cadastro </a></li>
+              <li><a [routerLink]="'/perfil'" *ngIf='!log2'> Minha conta </a></li>
+              <li><a [routerLink]="'/login'" *ngIf='!log2'> Logar </a></li>
+
             </ul>
           <li><a class="active parent">Saiba mais</a>
             <ul>
@@ -64,15 +59,19 @@
               <li><a [routerLink]="'/sobrenos'">A equipe</a></li>
               <li><a [routerLink]="'/ajuda'">Perguntas Frequentes</a></li>
             </ul>
-
+            
           </li>
-
-
+        
         </ul>
 
+      
       </div>
     </div>
   </nav>
+  <!-- <div class="searchbar">
+    <input class="search_input" type="text" name="" placeholder="Buscar">
+    <a class="search_icon"><i class="fas fa-search"></i></a>
+  </div> -->
 
   <script src="/assets/javascript/DioProgress.js"></script>
   <script src="/assets/javascript/jquery.parallax.js"></script>

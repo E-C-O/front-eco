@@ -1,9 +1,15 @@
-/* .space{
-    margin: 150px;
+.subtitulo{
+	font-size: small ;
 }
-.align-center{
-    text-align: center;
-} */
+
+.nome{
+	color: #fc766a;
+}
+
+.just{
+	text-align: center;
+}
+
 .img-resize{
     width: 211px;
     height: 211px;

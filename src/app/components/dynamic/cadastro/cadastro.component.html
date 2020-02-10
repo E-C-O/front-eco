@@ -1,75 +1,56 @@
-<div id="background">
-    <div class="container fonte alinhamento">
-        <div class="row">
-            <!-- <div class="col"> -->
-            <!-- <img src="assets/compras.jpg" width="500" height="700" class="img" alt=""> -->
-            <!-- </div> -->
-            <div class="col">
-                <div class="margin">
-                    <h3 class="titulo "> Cadastre-se </h3>
-                    <p id="subtitulo"> Crie uma conta rápida e fácil </p>
-                    <hr>
 
-                    <div class="row d-flex justify-content-center">
-                        <div class="card">
-                            <div class="card-body">
-
-
-                                <form>
-                                    <div class="form-group">
-                                        <label for="nome">Nome Completo</label>
-                                        <input type="text" class="form-control" id="nome"
-                                            placeholder="Digite seu Nome completo" data-toggle="tooltip"
-                                            data-placement="bottom" title="Email inválido"
-                                            [ngModelOptions]="{standalone: true}" [(ngModel)]="usuario.nome">
-
-                                    </div>
+}
+<div class="container">
 
 
 
-
-                                    <div class="form-group">
-                                        <label for="exampleInputEmail1">Endereco de Email</label>
-                                        <input type="email" class="form-control" name="email" id="exampleInputEmail1"
-                                            placeholder="Digite o seu email" [ngModelOptions]="{standalone: true}"
-                                            [(ngModel)]="usuario.email">
-                                    </div>
-
-                                    <!-- <div class="form-group">
-                                <label for="exampleInputTel">Telefone</label>
-                                <input type="text" class="form-control" name="telefone" id="exampleInputTel"
-                                    placeholder="Digite seu telefone" [ngModelOptions]="{standalone: true}"
-                                    [(ngModel)]="usuario.telefone">
-                            </div> -->
+    <div class="card">
+        <article class="card-body mx-auto" style="max-width: 400px;">
+            <h4 class="card-title mt-3 text-center">Cadastre-se</h4>
 
 
-                                    <div class="form-group">
-                                        <label for="exampleInputPassword1">Senha</label>
-                                        <input type="password" class="form-control" id="exampleInputPassword1"
-                                            placeholder="Digite uma senha com pelo menos 10 digitos e 01 caracter especial.">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="exampleInputPassword1">Senha</label>
-                                        <input type="password" class="form-control"
-                                            [ngModelOptions]="{standalone: true}" [(ngModel)]="usuario.senha"
-                                            id="exampleInputPassword1"
-                                            placeholder="Digite uma senha com pelo menos 01 caracter especial e pelo menos 10 digitos.">
-                                    </div>
-
-
-                                    <button (click)="cadastrar()" class="btn btn-primary">Cadastrar</button>
-                            
-                                </form>
-
-                                <p-toast  [style]="{marginTop: '80px'}" position="top-right" [showTransitionOptions]="'100ms'" [hideTransitionOptions]="'10ms'" (onClose)="redirect()"></p-toast>
-                                <p-toast key="error" [style]="{marginTop: '80px'}" position="top-right" [showTransitionOptions]="'100ms'" [hideTransitionOptions]="'500ms'"></p-toast>
-            
-
-                            </div>
-                        </div>
+            <p class="divider-text">
+                <span class="bg-light">Preencha o formulário abaixo</span>
+            </p>
+            <form>
+                <div class="form-group input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"> <i class="fa fa-user"></i> </span>
                     </div>
+                    <input name="" class="form-control" placeholder="Nome Completo" type="text">
                 </div>
-            </div>
-        </div>
+                <!-- form-group// -->
+                <div class="form-group input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+                    </div>
+                    <input name="" class="form-control" placeholder="Email" type="email">
+                </div>
+
+                <!-- form-group end.// -->
+                <div class="form-group input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+                    </div>
+                    <input class="form-control" placeholder="Criar senha" type="password">
+                </div>
+                <!-- form-group// -->
+                <div class="form-group input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+                    </div>
+                    <input class="form-control" placeholder="Repetir senha" type="password">
+                </div>
+                <!-- form-group// -->
+                <div class="btn-block">
+                    <button type="submit" class="btn btn-primary btn-block"> Criar conta </button>
+                </div>
+                <!-- form-group// -->
+                <p class="text-center">Já possui conta? <a href="">Faça Login</a> </p>
+            </form>
+        </article>
     </div>
+    <!-- card.// -->
+
 </div>
+<!--container end.//-->
