@@ -27,6 +27,7 @@ export class ProductsListComponent implements OnInit {
   products: Produto[];
   cadastro: Cadastro;
   ngOnInit() {
+    window.scroll(0,0);
     // if (Globals.CADASTRO == undefined) {
     //   this.router.navigate(['login']);
     // } 

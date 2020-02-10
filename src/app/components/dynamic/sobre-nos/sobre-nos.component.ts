@@ -16,6 +16,7 @@ export class SobreNosComponent implements OnInit {
   constructor(private router : Router) { }
 
   ngOnInit() {
+    window.scroll(0,0);
     // if (Globals.CADASTRO == undefined) {
     //   this.router.navigate(['login']);
     // } 

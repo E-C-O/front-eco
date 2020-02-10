@@ -25,6 +25,7 @@ export class CadastroListarComponent implements OnInit {
       this.cadastro = Globals.CADASTRO;
     }
     this.findAll();
+    window.scroll(0,0);
   }
 
   findAll(){

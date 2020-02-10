@@ -25,6 +25,7 @@ export class CadastroAtualizarComponent implements OnInit {
     else {
       this.globalUser = Globals.CADASTRO;
     }
+    window.scroll(0,0);
   }
 
   atualizar() {

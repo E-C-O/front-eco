@@ -12,6 +12,7 @@ import { UsuarioService } from 'src/app/service/usuario/usuario.service';
 export class CadastroComponent implements OnInit {
 
   ngOnInit() {
+    window.scroll(0,0);
   }
 
   usuario : Usuario = new Usuario();

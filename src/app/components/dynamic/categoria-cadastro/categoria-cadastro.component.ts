@@ -37,6 +37,7 @@ export class CategoriaCadastroComponent implements OnInit {
 
     this.listarCategoria();
 
+    window.scroll(0,0);
   }
 
   remover() {

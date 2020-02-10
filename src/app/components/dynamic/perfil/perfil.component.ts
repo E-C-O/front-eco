@@ -16,6 +16,7 @@ export class PerfilComponent implements OnInit {
   constructor(private router : Router) { }
 
   ngOnInit() {
+    window.scroll(0,0);
    if (Globals.CADASTRO == undefined) {
       alert("Faça login para continuar");
       this.router.navigate(['login']);

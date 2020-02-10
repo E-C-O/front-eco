@@ -16,6 +16,7 @@ export class VendaListarComponent implements OnInit {
     ) { }
 
   ngOnInit() {
+    window.scroll(0,0);
     this.listarVendas();
   }
 

@@ -23,6 +23,7 @@ export class ContatoComponent implements OnInit {
     else {
       this.cadastro = Globals.CADASTRO;
     }
+    window.scroll(0,0);
   }
 
 }
