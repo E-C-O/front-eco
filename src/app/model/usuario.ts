@@ -7,5 +7,4 @@ export class Usuario{
     public senha: string;
     public endereco: Endereco[];
     public venda: Venda[];
-     
 }

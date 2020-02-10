@@ -28,7 +28,7 @@
         <div class="row row-cols-1 row-cols-md-3">
           <div class="col-4" *ngFor="let itemProduct of products">
             <div class="card h-100 w-300">
-              <!-- <img src="{{itemProduct.linkFoto}}" class="card-img-top" alt="Imagem do produto"> -->
+              <img src="{{itemProduct.linkFoto}}" class="card-img-top" alt="Imagem do produto">
               <div style="height: 150px">
                 <div class="card-body">
                   <h5 class="card-title">{{itemProduct.nome}}</h5>
@@ -72,14 +72,14 @@
     <th>Link Foto</th>
     <th>Preço</th>
     <th>Qtd Estoque</th>
-    
+
     <tr *ngFor= "let item of products">
      <td>{{item.idProduto}}</td>
      <td>{{item.titulo}}</td>
      <td>{{item.detalhes}}</td>
      <td>{{item.linkfoto}}</td>
      <td>{{item.preco}}</td>
-     <td>{{item.qtdEstoque}}</td>   
+     <td>{{item.qtdEstoque}}</td>
     </tr>
 </table>
 <br>

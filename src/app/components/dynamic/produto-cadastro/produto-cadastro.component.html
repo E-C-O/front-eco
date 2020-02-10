@@ -1,113 +1,202 @@
-
-
-
 <!-- <img class="wave" src="img/wave.png"> -->
 <div class="container" style="padding-left: 150px;">
-    <!-- <div class="img">
+  <!-- <div class="img">
         <img src="../../../../assets/bg.png">
     </div> -->
-    <div class="login-content">
-        <form action="index.html">
+  <div class="login-content">
 
-            <h2 class="title"></h2>
+    <div class="card">
+      <article class="card-body mx-auto" style="max-width: 400px;">
+        <h4 class="card-title mt-3 text-center">Cadastro de produtos</h4>
 
 
+        <p class="divider-text">
+          <span class="bg-light">Preencha o formulário abaixo</span>
+        </p>
+        <form>
 
-            <div class="input-div">
-                <div class="i">
-                    <!-- <i class="fas fa-user"></i> -->
-                </div>
-                <div class="div">
-                    <!-- <h5>Usuário</h5> -->
-                    <input name="titulo" placeholder="Nome do produto" type="text" class="input"
-                          [ngModelOptions]="{standalone: true}" [(ngModel)]="produto.nome"
-                        required>
-                </div>
-                <div *ngIf="emailInval">
-                    <h5 class="alert-danger">Requerido</h5>
-                </div>
+          <!-- nome -->
+          <div class="form-group input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text"> <i class="fa fa-user"></i> </span>
             </div>
+            <input name="nome do produto" [(ngModel)]="produto.nome" class="form-control" placeholder="Nome do produto"
+              type="text">
+          </div>
 
-
-            <div class="input-div">
-                <div class="i">
-                    <!-- <i class="fas fa-user"></i> -->
-                </div>
-                <div class="div">
-                    <!-- <h5>Usuário</h5> -->
-                    <input name="detalhes" placeholder="Detalhes" type="text" class="input"  
-                        [ngModelOptions]="{standalone: true}" [(ngModel)]="produto.descricao" required>
-                </div>
-                <div *ngIf="emailInval">
-                    <h5 class="alert-danger">Requerido</h5>
-                </div>
+          <!-- descricao -->
+          <div class="form-group input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text"> <i class="fa fa-user"></i> </span>
             </div>
+            <input name="desc" [(ngModel)]="produto.descricao" class="form-control" placeholder="Descrição do produto"
+              type="text">
+          </div>
 
-
-            <div class="input-div">
-                <div class="i">
-                    <!-- <i class="fas fa-user"></i> -->
-                </div>
-                <div class="div">
-                    <!-- <h5>Usuário</h5> -->
-                    <input name="detalhes" placeholder="Marca" type="text" class="input"  
-                        [ngModelOptions]="{standalone: true}" [(ngModel)]="produto.marca" required>
-                </div>
-                <div *ngIf="emailInval">
-                    <h5 class="alert-danger">Requerido</h5>
-                </div>
+          <!-- marca -->
+          <div class="form-group input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text"> <i class="fa fa-user"></i> </span>
             </div>
+            <input name="marca" [(ngModel)]="produto.marca" class="form-control" placeholder="Marca do produto"
+              type="text">
+          </div>
 
-            <div class="input-div">
-                <div class="i">
-                    <!-- <i class="fas fa-user"></i> -->
-                </div>
-                <div class="div">
-                    <!-- <h5>Usuário</h5> -->
-                    <input name="preco" placeholder="Preço" type="text" class="input"  
-                        [ngModelOptions]="{standalone: true}" [(ngModel)]="produto.valor" required>
-                </div>
-                <div *ngIf="emailInval">
-                    <h5 class="alert-danger">Requerido</h5>
-                </div>
+
+          <!-- linkFoto -->
+          <div class="form-group input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text"> <i class="fa fa-user"></i> </span>
             </div>
+            <input name="linkFoto" [(ngModel)]="produto.linkFoto" class="form-control" placeholder="link da foto do produto"
+              type="text">
+          </div>
 
-            <div class="input-div">
-                <div class="i">
-                    <!-- <i class="fas fa-user"></i> -->
-                </div>
-                <div class="div">
-                    <!-- <h5>Usuário</h5> -->
-                    <input name="qtdEstoque" placeholder="Quantidade em estoque" type="text" class="input"
-                          [ngModelOptions]="{standalone: true}" [(ngModel)]="produto.qtdEstoque"
-                        required>
-                </div>
-                <div *ngIf="emailInval">
-                    <h5 class="alert-danger">Requerido</h5>
-                </div>
+          <!-- valor -->
+          <div class="form-group input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text"> <i class="fa fa-user"></i> </span>
             </div>
+            <input name="valor" [(ngModel)]="produto.valor" class="form-control" placeholder="Valor do produto"
+              type="text">
+          </div>
 
-            <div class="input-div">
-                <div class="i">
-                    <!-- <i class="fas fa-user"></i> -->
-                </div>
-                <div class="div">
-                    <!-- <h5>Usuário</h5> -->
-                    <!-- <input name="categoria" placeholder="Id da categoria" type="text" class="input"
+          <!-- qtdEstoque -->
+          <div class="form-group input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+            </div>
+            <input name="qtdEst" [(ngModel)]="produto.qtdEstoque" class="form-control"
+              placeholder="Quantidade em estoque" type="text">
+          </div>
+
+          <!-- categoria -->
+
+
+          <p-dropdown class="input" [options]="categorias" name="dropdownCategoria" [(ngModel)]="categoriaId">
+          </p-dropdown>
+
+          <!-- form-group// -->
+          <div class="btn-block">
+            <button (click)="cadastrar()" type="submit" class="btn" value="">Cadastrar</button>
+            <!-- <button type="submit" class="btn btn-primary btn-block"> Cadastrar </button> -->
+          </div>
+
+        </form>
+      </article>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+    <form action="index.html">
+
+      <h2 class="title"></h2>
+
+
+
+      <div class="input-div">
+        <div class="i">
+          <!-- <i class="fas fa-user"></i> -->
+        </div>
+        <div class="div">
+          <!-- <h5>Usuário</h5> -->
+          <input name="titulo" placeholder="Nome do produto" type="text" class="input"
+            [ngModelOptions]="{standalone: true}" [(ngModel)]="produto.nome" required>
+        </div>
+        <div *ngIf="emailInval">
+          <h5 class="alert-danger">Requerido</h5>
+        </div>
+      </div>
+
+
+      <div class="input-div">
+        <div class="i">
+          <!-- <i class="fas fa-user"></i> -->
+        </div>
+        <div class="div">
+          <!-- <h5>Usuário</h5> -->
+          <input name="detalhes" placeholder="Detalhes" type="text" class="input" [ngModelOptions]="{standalone: true}"
+            [(ngModel)]="produto.descricao" required>
+        </div>
+        <div *ngIf="emailInval">
+          <h5 class="alert-danger">Requerido</h5>
+        </div>
+      </div>
+
+
+      <div class="input-div">
+        <div class="i">
+          <!-- <i class="fas fa-user"></i> -->
+        </div>
+        <div class="div">
+          <!-- <h5>Usuário</h5> -->
+          <input name="detalhes" placeholder="Marca" type="text" class="input" [ngModelOptions]="{standalone: true}"
+            [(ngModel)]="produto.marca" required>
+        </div>
+        <div *ngIf="emailInval">
+          <h5 class="alert-danger">Requerido</h5>
+        </div>
+      </div>
+
+      <div class="input-div">
+        <div class="i">
+          <!-- <i class="fas fa-user"></i> -->
+        </div>
+        <div class="div">
+          <!-- <h5>Usuário</h5> -->
+          <input name="preco" placeholder="Preço" type="text" class="input" [ngModelOptions]="{standalone: true}"
+            [(ngModel)]="produto.valor" required>
+        </div>
+        <div *ngIf="emailInval">
+          <h5 class="alert-danger">Requerido</h5>
+        </div>
+      </div>
+
+      <div class="input-div">
+        <div class="i">
+          <!-- <i class="fas fa-user"></i> -->
+        </div>
+        <div class="div">
+          <!-- <h5>Usuário</h5> -->
+          <input name="qtdEstoque" placeholder="Quantidade em estoque" type="text" class="input"
+            [ngModelOptions]="{standalone: true}" [(ngModel)]="produto.qtdEstoque" required>
+        </div>
+        <div *ngIf="emailInval">
+          <h5 class="alert-danger">Requerido</h5>
+        </div>
+      </div>
+
+      <div class="input-div">
+        <div class="i">
+          <!-- <i class="fas fa-user"></i> -->
+        </div>
+        <div class="div">
+          <!-- <h5>Usuário</h5> -->
+          <!-- <input name="categoria" placeholder="Id da categoria" type="text" class="input"
                           [ngModelOptions]="{standalone: true}" [(ngModel)]="categoriaId"
                         required> -->
-                        <p-dropdown class="input"[options]="categorias" name ="dropdownCategoria" [(ngModel)]="categoriaId"></p-dropdown>
-                </div>
-                <!-- <div *ngIf="emailInval">
+          <!-- <p-dropdown class="input" [options]="categorias" name="dropdownCategoria" [(ngModel)]="categoriaId">
+                    </p-dropdown> -->
+        </div>
+        <!-- <div *ngIf="emailInval">
                     <h5 class="alert-danger">Requerido</h5>
                 </div> -->
-            </div>
+      </div>
 
 
-            
 
 
-            <!-- <form [formGroup]="categoriaForm">
+
+      <!-- <form [formGroup]="categoriaForm">
                         <select [(ngModel)]="produto.categoria" formControlName="cat">
                             <option  *ngFor="let categoria of categorias" [ngValue]="categoria">
                                 {{ categoria.nome}}
@@ -119,10 +208,10 @@
 
 
 
-            <!-- ULTIMO TESTE -->
+      <!-- ULTIMO TESTE -->
 
 
-            <!-- <form [formGroup]="categoriaForm" (ngSubmit)="cadastrar()">
+      <!-- <form [formGroup]="categoriaForm" (ngSubmit)="cadastrar()">
                         <select name="" id="">
                             <option value="" disabled>Categoria</option>
                             <option *ngFor="let categoria of categorias" [ngValue]="categoria">
@@ -133,7 +222,7 @@
                     </form> -->
 
 
-            <!-- <select>
+      <!-- <select>
                         <div *ngFor="let categoria of categorias">
                             <option [(ngModel)]="categoriaId" [value]="categoria.idCategoria">
                                 {{categoria.nome}}
@@ -145,10 +234,10 @@
 
 
 
-            <!-- <a href="#">Esqueceu a senha?</a> -->
-            
-            <button (click)="cadastrar()" type="submit" class="btn" value="">Cadastrar</button>
-        </form>
-    </div>
+      <!-- <a href="#">Esqueceu a senha?</a> -->
+
+      <!-- <button (click)="cadastrar()" type="submit" class="btn" value="">Cadastrar</button> -->
+    </form>
+  </div>
 </div>
 <script type="text/javascript" src="js/main.js"></script>
