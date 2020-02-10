@@ -24,7 +24,7 @@ export class CadastroComponent implements OnInit {
   usuarios = [];
 
 
-  senha: string;
+  senha: string = "";
   senha2: string;
 
 
@@ -56,9 +56,10 @@ export class CadastroComponent implements OnInit {
     if (this.senha.length < 6) {
       this.messageService.add({ key: 'error', life: 4000, summary: 'Senha muito fraca!', severity: 'error', detail: "A senha deve conter no mínimo 6 caractéres" });
     }
-    else if (!this.senhaNaoConferem) {
+    else if (this.senhaNaoConferem) {
       this.messageService.add({ key: 'error', life: 400, summary: 'Senhas não conferem!', severity: 'error' });
     } else {
+      this.usuario.senha = this.senha;
       this.usuarioService.insert(this.usuario).subscribe((usuario: Usuario) => {
         this.usuario = usuario;
         this.success();

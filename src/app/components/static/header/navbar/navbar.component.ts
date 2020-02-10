@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Usuario } from 'src/app/model/usuario';
 import { Globals } from 'src/app/model/globals';
-@Component({  
+@Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css'],
@@ -18,7 +18,6 @@ export class NavbarComponent implements OnInit {
   ngOnInit() {
 
     this.usuario = Globals.CADASTRO;
-    this.navUsuario = this.usuario.nome;
 
   }
 
@@ -30,6 +29,6 @@ export class NavbarComponent implements OnInit {
       this.alt = true;
     }
   }
- 
+
 
 }

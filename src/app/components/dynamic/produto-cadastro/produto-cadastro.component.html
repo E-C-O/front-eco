@@ -5,10 +5,9 @@
     </div> -->
   <div class="login-content">
 
+    <h1 style="padding: 15px; text-align: center">Cadastro de produtos</h1>
     <div class="card">
       <article class="card-body mx-auto" style="max-width: 400px;">
-        <h4 class="card-title mt-3 text-center">Cadastro de produtos</h4>
-
 
         <p class="divider-text">
           <span class="bg-light">Preencha o formulário abaixo</span>
@@ -48,8 +47,8 @@
             <div class="input-group-prepend">
               <span class="input-group-text"> <i class="fa fa-user"></i> </span>
             </div>
-            <input name="linkFoto" [(ngModel)]="produto.linkFoto" class="form-control" placeholder="link da foto do produto"
-              type="text">
+            <input name="linkFoto" [(ngModel)]="produto.linkFoto" class="form-control"
+              placeholder="link da foto do produto" type="text">
           </div>
 
           <!-- valor -->
@@ -72,9 +71,10 @@
 
           <!-- categoria -->
 
-
-          <p-dropdown class="input" [options]="categorias" name="dropdownCategoria" [(ngModel)]="categoriaId">
-          </p-dropdown>
+          <div >
+            <p-dropdown class="input" [options]="categorias" name="dropdownCategoria" [(ngModel)]="categoriaId">
+            </p-dropdown>
+          </div>
 
           <!-- form-group// -->
           <div class="btn-block">
@@ -85,159 +85,3 @@
         </form>
       </article>
     </div>
-
-
-
-
-
-
-
-
-
-
-
-
-    <form action="index.html">
-
-      <h2 class="title"></h2>
-
-
-
-      <div class="input-div">
-        <div class="i">
-          <!-- <i class="fas fa-user"></i> -->
-        </div>
-        <div class="div">
-          <!-- <h5>Usuário</h5> -->
-          <input name="titulo" placeholder="Nome do produto" type="text" class="input"
-            [ngModelOptions]="{standalone: true}" [(ngModel)]="produto.nome" required>
-        </div>
-        <div *ngIf="emailInval">
-          <h5 class="alert-danger">Requerido</h5>
-        </div>
-      </div>
-
-
-      <div class="input-div">
-        <div class="i">
-          <!-- <i class="fas fa-user"></i> -->
-        </div>
-        <div class="div">
-          <!-- <h5>Usuário</h5> -->
-          <input name="detalhes" placeholder="Detalhes" type="text" class="input" [ngModelOptions]="{standalone: true}"
-            [(ngModel)]="produto.descricao" required>
-        </div>
-        <div *ngIf="emailInval">
-          <h5 class="alert-danger">Requerido</h5>
-        </div>
-      </div>
-
-
-      <div class="input-div">
-        <div class="i">
-          <!-- <i class="fas fa-user"></i> -->
-        </div>
-        <div class="div">
-          <!-- <h5>Usuário</h5> -->
-          <input name="detalhes" placeholder="Marca" type="text" class="input" [ngModelOptions]="{standalone: true}"
-            [(ngModel)]="produto.marca" required>
-        </div>
-        <div *ngIf="emailInval">
-          <h5 class="alert-danger">Requerido</h5>
-        </div>
-      </div>
-
-      <div class="input-div">
-        <div class="i">
-          <!-- <i class="fas fa-user"></i> -->
-        </div>
-        <div class="div">
-          <!-- <h5>Usuário</h5> -->
-          <input name="preco" placeholder="Preço" type="text" class="input" [ngModelOptions]="{standalone: true}"
-            [(ngModel)]="produto.valor" required>
-        </div>
-        <div *ngIf="emailInval">
-          <h5 class="alert-danger">Requerido</h5>
-        </div>
-      </div>
-
-      <div class="input-div">
-        <div class="i">
-          <!-- <i class="fas fa-user"></i> -->
-        </div>
-        <div class="div">
-          <!-- <h5>Usuário</h5> -->
-          <input name="qtdEstoque" placeholder="Quantidade em estoque" type="text" class="input"
-            [ngModelOptions]="{standalone: true}" [(ngModel)]="produto.qtdEstoque" required>
-        </div>
-        <div *ngIf="emailInval">
-          <h5 class="alert-danger">Requerido</h5>
-        </div>
-      </div>
-
-      <div class="input-div">
-        <div class="i">
-          <!-- <i class="fas fa-user"></i> -->
-        </div>
-        <div class="div">
-          <!-- <h5>Usuário</h5> -->
-          <!-- <input name="categoria" placeholder="Id da categoria" type="text" class="input"
-                          [ngModelOptions]="{standalone: true}" [(ngModel)]="categoriaId"
-                        required> -->
-          <!-- <p-dropdown class="input" [options]="categorias" name="dropdownCategoria" [(ngModel)]="categoriaId">
-                    </p-dropdown> -->
-        </div>
-        <!-- <div *ngIf="emailInval">
-                    <h5 class="alert-danger">Requerido</h5>
-                </div> -->
-      </div>
-
-
-
-
-
-      <!-- <form [formGroup]="categoriaForm">
-                        <select [(ngModel)]="produto.categoria" formControlName="cat">
-                            <option  *ngFor="let categoria of categorias" [ngValue]="categoria">
-                                {{ categoria.nome}}
-                            </option>
-                        </select>
-                    </form> -->
-
-
-
-
-
-      <!-- ULTIMO TESTE -->
-
-
-      <!-- <form [formGroup]="categoriaForm" (ngSubmit)="cadastrar()">
-                        <select name="" id="">
-                            <option value="" disabled>Categoria</option>
-                            <option *ngFor="let categoria of categorias" [ngValue]="categoria">
-                                {{ categoria.nome}}
-                            </option>
-
-                        </select>
-                    </form> -->
-
-
-      <!-- <select>
-                        <div *ngFor="let categoria of categorias">
-                            <option [(ngModel)]="categoriaId" [value]="categoria.idCategoria">
-                                {{categoria.nome}}
-                            </option>
-                        </div>
-                    </select> -->
-
-
-
-
-
-      <!-- <a href="#">Esqueceu a senha?</a> -->
-
-      <!-- <button (click)="cadastrar()" type="submit" class="btn" value="">Cadastrar</button> -->
-    </form>
-  </div>
-</div>
-<script type="text/javascript" src="js/main.js"></script>

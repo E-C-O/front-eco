@@ -12,8 +12,16 @@ import { Globals } from 'src/app/model/globals';
   providers: [Globals]
 })
 export class EnderecoCadastroComponent implements OnInit {
-  
+
   emailInval: Boolean;
+  cidadeInval: Boolean;
+  ufInval: Boolean;
+  cepInval: Boolean;
+  bairroInval: Boolean;
+  numeroInval: Boolean;
+  ruaInval: Boolean;
+
+
   usuarioId: number;
   endereco: Endereco = new Endereco();
 
@@ -27,7 +35,7 @@ export class EnderecoCadastroComponent implements OnInit {
 
   cadastrar() {
     //this.usuario.idUsuario = this.usuarioId;
-    
+
     let usuario : Usuario = new Usuario();
     usuario.id = Globals.CADASTRO.id;
     console.log(usuario.id);
